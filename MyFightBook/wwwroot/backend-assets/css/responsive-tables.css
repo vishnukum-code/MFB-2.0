@@ -1,0 +1,42 @@
+/*
+ * Responsive Tables plugin 2.2.1
+ */
+@media only screen and (max-width: 1024px) {
+    /* change media query width to suit needs */
+    /* force table markup to behave like divs */
+    .jrt table,
+    .jrt thead,
+    .jrt tbody,
+    .jrt th,
+    .jrt td,
+    .jrt tr {
+        display: block;
+        text-align: right !important;
+    }
+    /* hide table headers (but not display: none;, for accessibility) */
+    .jrt thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .jrt td {
+        /* behave  like a "row" */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-weight: normal;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .jrt td:before {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        max-width:58%;
+        padding-right:0;
+        text-transform: uppercase;
+        text-align: left;
+    }
+}

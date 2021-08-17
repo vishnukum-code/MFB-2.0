@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Register confirmation";
+    var error = ViewBag.Error != null ? ViewBag.Error : string.Empty;
+    var id = ViewBag.id != null ? ViewBag.id : null;
+    var code = ViewBag.code != null ? ViewBag.code : null;
+}
+
+<h1>@ViewData["Title"]</h1>
+@{
+    if (id != null && code!=null)
+    {
+        <p>
+            This app does not currently have a real email sender registered, see <a href="https://aka.ms/aspaccountconf">these docs</a> for how to configure a real email sender.
+            Normally this would be emailed: <a id="confirm-link" href="@Url.Action("EmailVerification","Account", new { Userid=id,code=code})">Click here to confirm your account</a>
+        </p>
+    }
+    else
+    {
+        <p>
+            Something Wrong!
+        </p>
+    }
+}

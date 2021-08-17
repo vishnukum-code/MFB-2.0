@@ -1,8 +1,905 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using System.Globalization;
+@{
+    Layout = null;
+    var rand = new Random();
+    var elgrCulture = CultureInfo.CreateSpecificCulture("el-GR");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" defer data-cbid="ae4304bc-b183-4f88-aff0-657bbd1471b4" data-blockingmode="auto" type="text/javascript" asp-append-version="true"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="MyFightBook connects federations, clubs, and fighters on a single platform, making worldwide cooperation across martial arts easy and convenient.">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" async />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="~/css/style/css/slick.min.css" rel="stylesheet" async asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style/css/custom.css" async asp-append-version="true" />
+    <link rel="shortcut icon" href="~/css/style/img/favicon.ico" type="image/x-icon" asp-append-version="true">
+    <link rel="icon" href="~/css/style/img/favicon.ico" type="image/x-icon" asp-append-version="true">
+    <title>
+        Complete overview for members within the combat sports world - MyFightBook
+    </title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152533538-2" asp-append-version="true"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-152533538-2');
+    </script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <meta name="google-signin-client_id" content="155884539571-7po9obk0gr2ennhvj4v0nkencf3oborg.apps.googleusercontent.com">
+    <script src="~/js/GoogleLibrary.js"></script>
+    <script src="~/js/FacebookLibrary.js"></script>
+
+    <style>
+        div.g-signin2 > div {
+            margin: 10px auto !important;
+        }
+
+        .facebook-Create-Btn {
+            background: #3479ea;
+            color: #fff;
+            display: flex;
+            font-size: 20px;
+            padding: 2px 15px;
+            border-radius: 5px;
+            max-width: 215px;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            text-decoration: none !important;
+        }
+
+            .facebook-Create-Btn:hover {
+                color: #00A0C6;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+</head>
+
+<body>
+    <form asp-action="ExternalUserLogin" asp-controller="Auth" method="get" class="form-horizontal" style="display:none">
+        <input type="hidden" id="UserEmail" name="UserEmail" />
+        <input type="hidden" id="FirstName" name="FirstName" />
+        <input type="hidden" id="LastName" name="LastName" />
+        <input type="hidden" id="GoogleId" name="GoogleId" />
+        <input type="submit" class="btn btn-info" id="ExternalUserLoginBtn" />
+    </form>
+
+    <div class="loader-1 loading-img" style="display: none;">
+        <img src="/images/Spin-1s-200px.gif" class="" alt="" asp-append-version="true" loading="lazy">
+    </div>
+    <input hidden value="@ViewBag.Servertime" name="servertime" />
+    <!------------Header-Start------------>
+    <header class="site-header" id="site-header">
+        <div class="top-container">
+            <div class="mobile-menu">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="nav-bar">
+                            <a href="@Url.Action("IndexNew", "Home")">
+                                <img src="~/css/style/img/logo-white@2x.png" asp-append-version="true">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="right-side-nav-bar">
+                            <ul>
+                                <li><a href="javascript:void(0);" class="club-request-popup-btn">Are you a club?</a></li>
+                                <li><a href="#advantagehome">advantages</a></li>
+                                <li><a href="#abouthome">about</a></li>
+                                <li class="contant-li"><a href="#contacthome">contact us</a></li>
+                                <li class="contant-li"><a href="https://support.myfightbook.com/" target="_blank">Support </a></li>
+                                <li>
+                                    <input id="search_submit" value="Rechercher" type="submit" class="searchallinputdesktop">
+                                </li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Details", "Profile")">PROFILE</a>
+                                    </li>
+                                    <li>
+                                        @*<a href="@Url.Action("SignOut", "Auth")">SIGN OUT</a>*@
+                                        <a href="@Url.Action("SignOut","Account")">SIGN OUT</a>
+                                    </li>
+                                }
+                                else
+                                {
+                            <li>
+                                <a class="login-btn" href="@Url.Action("Login", "Account")">LOGIN</a>
+                            </li>
+                                }
+                            </ul>
+                            <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" role="dialog" id="searchmodaldesktop">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" id="closeicon" class="close" aria-label="Close">
+                            <span aria-hidden="true"><img src="~/css/style/img/close.svg" alt="" asp-append-version="true" /></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="search-now">
+                            <input type="text" name="search" class="searchallinputdesktopbox form-control" autofocus="autofocus" autocomplete="off" />
+                            <span class="custom-search">
+                                <button type="button" class="search-more serachclickdesktop">
+                                    @*<i class="fa fa-search" aria-hidden="true"></i>*@
+                                    <img src="~/css/style/img/searchgrey.svg" alt="" class="searchalldesktop" asp-append-version="true" />
+                                </button>
+                                <a class="allsearchcrossdesktop"><img class="close-img allsearchcrossdesktopimg" src="~/css/style/img/close-white.svg" asp-append-version="true" /></a>
+                            </span>
+                            <div class="specific-searchbg searchalltypedesktop">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="window">
+            <div class="header">
+                <div class="header_nav clearfix">
+                    <div class="zenegy_logo">
+                        <a href="javascrpit:avoid(0)">
+                            <img src="~/css/style/img/logo-white@2x.png" asp-append-version="true">
+                        </a>
+                    </div>
+                    <div class="burger-container">
+                        <div id="burger">
+                            <div class="bar topBar"></div>
+                            <div class="bar btmBar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-sec">
+                    <div class="search-sec">
+                        <div class="specific">
+                            <div class="search-field">
+                                <input type="text" placeholder="Search for everything" class="form-control border-0 searchallinput">
+                                <div class="input-group-append">
+                                    <button id="button-addon1" type="submit" class="btn btn-link text-primary serachclickmobile">
+                                        <img src="~/css/style/img/search-red.svg" alt="" class="searchallimg" asp-append-version="true" />
+                                    </button>
+                                    <a class="allsearchcrossmobile"><img class="close-img allsearchcrossmobileimg" src="~/css/style/img/close1.svg" asp-append-version="true" /></a>
+                                </div>
+                            </div>
+                            <div class="specific-searchbg searchalltype">
+                            </div>
+                        </div>
+
+                    </div>
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <a href="javascript:void(0);" class="club-request-popup-btn">Are you a club?</a>
+                        </li>
+                        <li class="menu-item close-bar">
+                            <a href="#advantagehome" id="advantagemenu">advantages</a>
+                        </li>
+                        <li class="menu-item close-bar">
+                            <a href="#abouthome" id="aboutmenu">about</a>
+                        </li>
+                        <li class="menu-item close-bar">
+                            <a href="#contacthome" id="contactmenu">contact us</a>
+                        </li>
+                        <li class="menu-item close-bar">
+                            <a href="https://support.myfightbook.com/" target="_blank">Support </a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="menu-item">
+                                <a href="@Url.Action("Details", "Profile")">PROFILE</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("SignOut", "Auth")" class="login-btn">SIGN OUT</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="@Url.Action("Login", "Auth")" class="login-btn">LOGIN</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="main-page">
+        <div class="slider">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="slide-contant">
+                            <span>WELCOME</span>
+                            <h1 data-anim="word-up">
+                                Your new and unique online license with competition calendar and
+                                medical records
+                            </h1>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <a class="new_user join-btn" href="@Url.Action("Register", "Account")">Join Today</a>
+
+                                <!-- Display Google sign-in button -->
+                                @*<div style="text-align:center; display:none;" class="g-signin2" data-onsuccess="onSignIn" onclick="GooglSignIn();"></div>*@
+
+                                <!-- Facebook login or logout button -->
+                                @*<a href="javascript:void(0);" onclick="fbLogin();" class="facebook-Create-Btn"><i class="fa fa-facebook-square"></i> <span>Create user with Facebook </span></a>*@
+
+
+                            }
+                            else
+                            {
+                                <a class="new_user join-btn" href="@Url.Action("Details", "Profile")">My Profile</a>
+                            }
+                            @* <button type="button" class="join-btn">Join Today</button>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="row project">
+                    <div class="col">
+                        <div class="project-score">
+                            <h1>@ViewBag.totalclubcount</h1>
+                            <h4>clubs</h4>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="project-score">
+                            <h1>@((ViewBag.totalfighters).ToString("0,0", elgrCulture))</h1>
+                            <h4>fighters</h4>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="project-score">
+                            <h1>@ViewBag.totaleventcount</h1>
+                            <h4>events</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------------Header-Close------------>
+        <!----------OneTool-Satrat-------------->
+
+        <div class="competition-bg" id="advantagehome">
+            <div class="one-tool">
+                <div class="col-left">
+                    <div class="basic-function-loader">
+                        <i class="fa fa-refresh loading--inline-block loading--animate " title="Loading" style=""></i>
+                    </div>
+                    @*<div class="owl-carousel owl-theme" id="owl-carousel">*@
+                    <div class="variablecomp" style="display:none;">
+                        <div class="competition-view">
+                            <img src="~/css/style/img/member-icon.png" alt="member-icon" asp-append-version="true" />
+                            <h2>BASIC FUNCTIONS</h2>
+                            <p>
+                                When you register a profile as a member on MyFightBook you will be granted access to all basic functions on the website, easily accessible from both computer and mobile devices. All registered members can order a license from their respective national association. The price for a license is determined locally by the national federations and clubs.
+                            </p>
+                        </div>
+                        <div class="competition-view">
+                            <img src="~/css/style/img/competition-icon.png"
+                                 alt="competition-icon" asp-append-version="true" />
+                            <h2> RESULT OVERVIEW</h2>
+                            <p>
+                                MyFightBook registers each contestant regardless of combat sport and collects and saves the competition results. The secretary at each competition has access to MyFightBook during an event. This will save federations and clubs a lot of work, and more importantly, enable our members to focus on what really creates value for them.
+                            </p>
+                        </div>
+                        <div class="competition-view">
+                            <img src="~/css/style/img/member-icon.png" alt="member-icon" asp-append-version="true" />
+                            <h2>MEDICAL RECORDS</h2>
+                            <p>
+                                Regardless of the combat sport, the contestants’ medical reports will be available online on MyFightBook. It’s easy and manageable to get an overview of the fighters’ previous or current injuries, which strengthens the security not only for the contestants but also for the association and the event coordinator.
+                            </p>
+                        </div>
+                        <div class="competition-view">
+                            <img src="~/css/style/img/member-icon.png" alt="member-icon" asp-append-version="true" />
+                            <h2>TOURNAMENT AND EVENT OVERVIEW</h2>
+                            <p>
+                                With MyFightBook you also get a complete overview of upcoming events, how and when to sign up, which fighters already signed up and much more. It’s an easy and convenient way for you to manage all the registrations for the various competitions.
+                            </p>
+                        </div>
+                        <div class="competition-view">
+                            <img src="~/css/style/img/member-icon.png" alt="member-icon" asp-append-version="true" />
+                            <h2>RANKING OVERVIEW</h2>
+                            <p>
+                                MyFightBook also provides a unique opportunity for you to get a full overview of the fighters rank. You can use the feature across several martial arts disciplines, making it easy for clubs and federations to check when a fighter was graduated to e.g. yellow belt.
+                            </p>
+                        </div>
+                        <div class="competition-view">
+                            <img src="~/css/style/img/member-icon.png" alt="member-icon" asp-append-version="true" />
+                            <h2>CONTINGENT PAYMENT</h2>
+                            <p>
+                                As a part of the package, you also get access to our integrated payment system. The contingent payment feature is completely free of membership and setup fees, making the payment transparent for both federations, clubs, and members. Want to learn more about our pricing? Just scroll down the page.
+                            </p>
+                        </div>
+                    </div>
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <a class="new_user join-btn" href="@Url.Action("RegisterNew", "Auth")">Join Today</a>
+                    }
+                    else
+                    {
+                        <a class="new_user join-btn" href="@Url.Action("Details", "Profile")">My Profile</a>
+                    }
+                </div>
+
+                <div class="col col-right">
+                    <div class="complete">
+                        <h4>what is my fight book?</h4>
+                        <h1 data-anim="word-up">One tool. <br />Complete overview.</h1>
+                        <p>
+                            MyFightBook is designed to support a transparent and complete overview for members within the combat sports world. The platform connects federations, clubs, and fighters on a single platform, making worldwide cooperation across martial arts easy and convenient.
+                        </p>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <a class="new_user join-btn" href="@Url.Action("RegisterNew", "Auth")">Join Today</a>
+                        }
+                        else
+                        {
+                            <a class="new_user join-btn" href="@Url.Action("Details", "Profile")">My Profile</a>
+                        }
+                        @*<button type="button" class="join-btn">Join Today</button>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="strong-clubs-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="clube-contant">
+                            <img src="~/css/style/img/invalid-name.png" lat="invalid-name" asp-append-version="true" />
+                            <h1 data-anim="word-up">
+                                A strong and forceful platform for clubs
+                            </h1>
+                            <p>
+                                MyFightBook made it easy and convenient for us. It gives us a great overview and more time for the things that really matter and adds value to our club.
+                            </p>
+                            <p> MyFightBook has continuously developed its system and has a high level of service, as well as being economically viable. We are looking forward to using more of the features and advantages, and we can highly recommend MyFightBook to other clubs.</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="bo-profile">
+                                    <img src="~/css/style/img/mark-adriane-fh-6-jca-cr-yj-0-unsplash.png" alt="bo-profile" asp-append-version="true" />
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="bo-profile">
+                                    <h2>Sonny</h2>
+                                    <h4>Great Danes Fight Club</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="powerfull-platform">
+                            <img src="~/css/style/img/wade-austin.png" alt="wade-austin" asp-append-version="true" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!----------OneTool-Close-------------->
+        <!-----------Fighters-Start------------>
+        <section class="our-fighters-bg">
+            <div class="container">
+
+                <div class="fighting-view text-center">
+                    <h4>The hard fighting people</h4>
+                    <h1 data-anim="word-up">our fighters</h1>
+                    <div class="search-now">
+                        <input type="text"
+                               placeholder="Search amongst 1.000+ fighters" class="searchfightersinput form-control" />
+                        <div class="custom-search">
+                            <button type="button" class="search-more fightersearchclick">
+                                @*<i class="fa fa-search" aria-hidden="true"></i>*@
+                                <img src="~/css/style/img/search-red.svg" alt="" class="fightersearch" asp-append-version="true" />
+                            </button>
+                            <a class="fightersearchcross"><img class="close-img" src="~/css/style/img/close1.svg" asp-append-version="true" /></a>
+                        </div>
+                        <div class="specific-searchbg searchfighters">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="our-fighters">
+
+                </div>
+        </section>
+
+        <!-----------Fighters-Close------------>
+        <!-----------Pricing-Start------------->
+        <section class="Pricing-outer">
+            <div class="container">
+                <div class="Pricing-tabs">
+                    <h1 data-anim="word-up" class="Pricing-title">pricing</h1>
+
+                </div>
+                <div class="pricedata">
+                    <div class="row" id="FederationPricing">
+                        <div class="col-lg-6">
+                            <div class="premium">
+                                <h4>European cards</h4>
+                                <p>
+                                    We are completely free of
+                                    registration and membership fees.
+                                    The price for a license is
+                                    determined locally by the national
+                                    federations and clubs.
+                                </p>
+                                <h1>3% + € 0,24</h1>@*<span>D K K</span>*@
+
+                                <div class="premium-contant">
+                                    <ul>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>BASIC FUNCTIONS</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>RESULT OVERVIEW </span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>MEDICAL RECORDS</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>TOURNAMENT AND EVENT OVERVIEW</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>RANKING OVERVIEW</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>CONTINGENT PAYMENT</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="sccess">
+                                    <a href="mailto:contact@myfightbook.com" class="scces-btn">get full access</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row" id="clubspricing">
+                        <div class="col-lg-6">
+                            <div class="premium">
+                                <h4>European cards</h4>
+                                <p>
+                                    We are completely free of
+                                    registration and membership fees.
+                                    The price for a license is
+                                    determined locally by the national
+                                    federations and clubs.
+                                </p>
+                                <h1>3% + € 0,24</h1> @*<span>D K K</span>*@
+
+                                <div class="premium-contant">
+                                    <ul>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>BASIC FUNCTIONS</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>RESULT OVERVIEW</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>MEDICAL RECORDS</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>TOURNAMENT AND EVENT OVERVIEW</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>RANKING OVERVIEW</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>CONTINGENT PAYMENT</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="sccess">
+                                    <a href="mailto:contact@myfightbook.com" class="scces-btn">get full access</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row" id="fighterspricing">
+                        <div class="col-lg-6">
+                            <div class="premium">
+                                <h4>European cards</h4>
+                                <p>
+                                    We are completely free of
+                                    registration and membership fees.
+                                    The price for a license is
+                                    determined locally by the national
+                                    federations and clubs.
+                                </p>
+                                <h1>3% + € 0,24</h1>@*<span>D K K</span>*@
+
+                                <div class="premium-contant">
+                                    <ul>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>BASIC FUNCTIONS</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>RESULT OVERVIEW</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>MEDICAL RECORDS</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>TOURNAMENT AND EVENT OVERVIEW</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>RANKING OVERVIEW</span>
+                                        </li>
+                                        <li>
+                                            <img src="~/css/style/img/group-3/group-3.png" alt="group-3" asp-append-version="true" />
+                                            <span>CONTINGENT PAYMENT</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="sccess">
+                                    <a href="mailto:contact@myfightbook.com" class="scces-btn">get full access</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-----------/Pricing-Close------------->
+        <!-----------events & Tournaments-Start------------->
+        <section class="events-outer">
+            <div class="container">
+                <div class="row>">
+                    <div class="col-lg-6">
+                        <div class="tournaments">
+                            <h1 data-anim="word-up">events & Tournaments</h1>
+                            <p>
+                                Our members use MyFightBook to host and support events all over the world. Surf around and have a look!
+                            </p>
+                            <div class="specific mobile">
+                                <div class="search-field">
+                                    <input type="text"
+                                           placeholder=""
+                                           aria-describedby="button-addon1"
+                                           class="autocomplete form-control border-0 searcheventtournament" />
+                                    <div class="input-group-append">
+                                        <button id="button-addon1"
+                                                type="submit"
+                                                class="btn btn-link text-primary searchclickeventtournamentmobile">
+                                            @*<i class="fa fa-search"></i>*@
+                                            <img src="~/css/style/img/search-red.svg" alt="" class="searcheventmobile" asp-append-version="true" />
+                                        </button>
+                                        <a class="eventcrossmobile"><img class="close-img eventdeletemobile" src="~/css/style/img/close1.svg" asp-append-version="true" /></a>
+                                    </div>
+                                </div>
+                                <div class="specific-searchbg eventtournamentsearch">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="event-item-bg">
+                <div class="variable">
+                    @*<div class="owl-carousel owl-theme" id="owl-carousel1">*@
+                    @if (ViewBag.eventtournamentlist != null)
+                    {
+                        foreach (var eventtournament in ViewBag.eventtournamentlist)
+                        {
+                            if (eventtournament.ImageArray != null)
+                            {
+                                int index = rand.Next(eventtournament.ImageArray.Length);
+                                var url = "";
+                                if (eventtournament.Type == "Event")
+                                {
+                                    url = "/publicpages/eventId/" + eventtournament.Id;
+                                }
+                                else
+                                {
+                                    url = "/publicpages/tournamentid/" + eventtournament.Id;
+                                }
+                                <a href="@url">
+                                    <div class="event-item">
+                                        <img src="@eventtournament.ImageArray[index]" />
+                                        <h5>@eventtournament.Type</h5>
+                                        <div class="event-contant">
+                                            <h2>@eventtournament.Name</h2>
+                                            <h4>
+                                                @eventtournament.StartDate.ToString("dd. MMMM yyyy")
+                                                <span>
+                                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                                </span>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            }
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="specific desktop">
+                    <h4 class="text-center">looking for something specific?</h4>
+                    <div class="search-field">
+                        <input type="text"
+                               placeholder=""
+                               aria-describedby="button-addon1"
+                               class="autocomplete form-control border-0 searcheventtournament searcheventtournamentdesktop" />
+                        <div class="input-group-append">
+                            <button id="button-addon1"
+                                    type="submit"
+                                    class="btn btn-link text-primary searchclickeventtournamentdesktop">
+                                @*<i class="fa fa-search"></i>*@
+                                <img src="~/css/style/img/search-red.svg" alt="" class="searcheventdesktop" asp-append-version="true" />
+                            </button>
+                            <a class="eventcrossdesktop"><img class="close-img eventdeletedesktop" src="~/css/style/img/close1.svg" asp-append-version="true" /></a>
+                        </div>
+                    </div>
+                    <div class="specific-searchbg eventtournamentsearchdesktop">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-----------/events & Tournaments-Close------------->
+        <!-----------About-My-Fight-Book-Start------------>
+        <section class="fight-book-outer" id="abouthome">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-left">
+                            <img src="~/css/style/img/dylan-nolte-qx-y-dh-v-0-r-b-pk-unsplash@3x.png"
+                                 alt="sdsa" asp-append-version="true" loading="lazy" />
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="fight-book">
+                            <h1 data-anim="word-up">The story about my fight book</h1>
+                            <p>
+                                In 2015 the first steps towards what is now MyFightBook were taken.
+                            </p>
+                            <p>
+                                Claus Skjoldborg, who has decades of experience within combat sports, both nationally and internationally, found himself missing a service that could provide a complete overview of everything within the world of martial arts. Therefore, together with Danish MMA, Danish Muaythai, and Danish Taekwondo federations, he came up with the idea of a platform to connect fighters, clubs, and federations within combat sports throughout the world. This lead to MyFightBook. Today all data is gathered in one single platform making the benefits for the members clearly evident.
+                            </p>
+                            <p>
+                                The journey towards being the first digital online license for members of the combat sports world has been both exciting and challenging. Each day we constantly aim at getting even better than we were yesterday so our members can enjoy all the great things the martial arts has to offer - without having to think about any administrative hassle. MyFightBook has made all of that easy and convenient.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-----------/About-My-Fight-Book-Close------------>
+
+    </div>
+    <!---------------Footer-Start---------------------->
+
+    <footer id="contacthome">
+        <div class="footer-outer">
+            <div class="top-container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="footer-item  footerlogo">
+                            <a href="@Url.Action("IndexNew", "Home")">
+                                <img src="~/css/style/img/logo-white@2x.png" asp-append-version="true">
+                            </a>
+                            <p>
+                                Are we missing something important?
+                                <br />
+                                Then please don’t hesitate to contact us.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div class="footer-item  footerlogo">
+                            <h4>
+                                <img src="~/css/style/img/competition-icon.png" asp-append-version="true"
+                                     alt="competition-icon" />Made with blood, sweat and tears
+                            </h4>
+                        </div>
+                        <div class="footer-item  footerlogo">
+                            <h4><a href="mailto:contact@myfightbook.com" target="_blank">contact@myfightbook.com</a></h4>
+                            <h4>
+                                <p><a href="tel:+ 45 22 58 14 59">+ 45 22 58 14 59</a></p>
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-right">
+                        <div class="footer-item  footerlogo">
+                            <h4>
+                                <a href="mailto:contact@myfightbook.com" target="_blank">contact@myfightbook.com</a>
+                                <br />
+                                <a href="tel:+ 45 22 58 14 59">+ 45 22 58 14 59</a>
+                            </h4>
+
+                        </div>
+                        <div class="footer-item  footerlogo">
+                            <h4>
+                                <img src="~/css/style/img/competition-icon.png"
+                                     alt="competition-icon" asp-append-version="true" />Made with blood, sweat and tears
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal contact_modal_popup" id="myContactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdtZG0aAAAAAO8PYokdgQ5J1vQwKGeaxMWdQUkb"></script>
+        <script>
+            grecaptcha.enterprise.ready(function () {
+                $(".grecaptcha-badge").hide();
+                grecaptcha.enterprise.execute('6LdtZG0aAAAAAO8PYokdgQ5J1vQwKGeaxMWdQUkb', { action: 'homepage' }).then(function (token) {
+                    //...
+                    console.log("ReCaptcha Working");
+                });
+            });
+        </script>
+
+        <div class="container">
+            <div class="modal_close close_image">
+                <a href="#" class="btn-close-overlay" data-dismiss="modal" aria-label="Close">
+                    <img src="~/backend-assets/img/icon_close.svg" asp-append-version="true" alt="icon_close" />
+                </a>
+            </div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <div class="contact_modal">
+                            <h1 class="text-center">REGISTER A NEW CLUB, FOR FREE</h1>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6 display-center">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" name="Name" placeholder="Name" id="Name" class="form-control" required />
+                                        </div>
+                                        <input type="hidden" name="Location" id="Location" value="Zenegy København">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6 display-center">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" name="Email" id="Email" placeholder="Email" class="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6 display-center">
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input type="tel" name="Phone" id="Phone" placeholder="Phone" class="form-control accept-only-num" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 text-center">
+                                    <button type="submit" id="ContactSub" class="btn btn-primary contact_btn">REGISTER A NEW CLUB, FOR FREE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal contact_modal_popup" id="messagePopup" tabindex="-1" role="dialog" aria-labelledby="messagePopupLabel">
+        <div class="container">
+            <div class="modal_close close_image">
+                <a href="#" class="btn-close-overlay" data-dismiss="modal" aria-label="Close">
+                    <img src="~/backend-assets/img/icon_close.svg" alt="icon_close" asp-append-version="true" />
+                </a>
+            </div>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="contact_modal">
+                            <h1 class="text-center">You're one step closer to managing your club!</h1>
+                            <p>Our representative will get back to you shortly, stay tuned.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!---------------Footer-Close---------------------->
+    <script src="~/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/css/style/js/index-new-min.min.js" asp-append-version="true"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+    <script src="~/css/style/js/main-min.min.js" defer asp-append-version="true"></script>
+    <script src="~/css/style/js/index-0-new-min.min.js" defer asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.0/jquery.nicescroll.min.js"></script>
+    <script>
+        jQuery(window).load(function () {
+            $("#advantagehome .one-tool .col-left .basic-function-loader").hide();
+            $("#advantagehome .one-tool .col-left .variablecomp").show();
+        });
+    </script>
+</body>
+</html>
+@{
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "/home/GetFighterImage",
+                success: function (data) {
+                    $("#our-fighters").html(data);
+                },
+                error: function () {
+
+                }
+            });
+
+            //Set Google Button
+            setTimeout(
+                function textchange() {
+                    $(".g-signin2").show();
+                    $(".abcRioButtonContents span").css("font-size", "18px");
+                    $(".abcRioButtonContents span").text("Sign Up");
+                }, 1000);
+
+        });
+        function globalSignOut() {
+            signOutGoogle();
+            fbLogout();
+            window.location.href = "/auth/signout/";
+        }
+
+    </script>
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>

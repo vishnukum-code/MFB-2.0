@@ -1,0 +1,4175 @@
+@media (max-width:2100px) {
+
+    .main-section {
+        .right-section {
+            .scrollable-table {
+                .table-content {
+                    .table-main-sec {
+                        table {
+                            table-layout: fixed;
+                            width: 100%;
+
+                            .top {
+                                th {
+                                    &.space_fixed {
+                                        padding: 24px 0 25px;
+                                    }
+
+                                    &:first-child {
+                                        padding: 24px 0 25px 15px;
+                                    }
+
+                                    &:last-child {
+                                        padding: 24px 15px 25px 0;
+                                    }
+                                }
+                            }
+
+                            th, td {
+                                width: auto;
+                                min-width: 160px;
+
+                                &:first-child {
+                                    padding-left: 15px !important;
+                                }
+
+                                &.space_fixed_date {
+                                    padding: 20px 0;
+                                    text-align: center;
+                                    min-width: 120px;
+                                    max-width: 120px;
+
+                                    label {
+                                        display: block;
+                                    }
+                                }
+
+                                &.space_fixed {
+                                    min-width: 60px !important;
+                                    max-width: 60px;
+                                    padding: 20px 0;
+                                }
+
+                                &.space_fixed_membership {
+                                    min-width: 120px;
+                                    max-width: 120px;
+                                    padding-right: 20px !important;
+                                    padding-left: 0;
+                                }
+
+                                .active, .cancel, .past-membership, .excepted-memeber, .watting-member {
+                                    width: 100% !important;
+                                }
+                            }
+                            /*thead {
+                                display: table-row;
+                            }*/
+                            tbody {
+                                overflow-y: scroll;
+                                overflow-x: hidden;
+                                display: block;
+                                height: calc(100vh - 400px);
+
+                                tr {
+                                    td {
+                                        &:last-child {
+                                            padding-right: 20px !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .login-page {
+        .left {
+            .bottom-sec {
+                right: auto;
+                width: 100%;
+                left: 70px;
+            }
+        }
+    }
+
+    .main-section {
+        .right-section {
+            .default-table {
+                .table-content {
+                    .table-main-sec {
+                        overflow: auto;
+                        white-space: nowrap;
+
+                        table {
+                            tr {
+                                td {
+                                    .crate-plan {
+                                        .form-group {
+                                            &.select-div {
+                                                width: 200px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .scrollable-table {
+                .table-content {
+                    .table-main-sec {
+                        table {
+                            //   white-space: nowrap;
+                        }
+                    }
+                }
+            }
+
+            .add-fighter {
+                .table-content {
+                    .table-main-sec {
+                        & > .top {
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+                            .form-group {
+                                &.select-div {
+                                    width: calc(50% - 10px);
+                                    margin-bottom: 14px;
+                                    margin-right: 0;
+                                }
+                            }
+
+                            .div-btn {
+                                width: calc(50% - 10px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1350px) {
+    .main-section {
+        .right-section {
+            .profile-page {
+                .top-bg {
+                    .profile-detail {
+                        .img-desc {
+                            .img-box {
+                                img {
+                                    width: 150px;
+                                    height: 150px;
+                                    min-width: 150px;
+                                }
+                            }
+
+                            .desc {
+                                .description_scroll {
+                                    max-height: 135px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .main-section {
+        .right-section {
+            .club-page {
+                .events {
+                    .middle-block {
+                        .event-box {
+                            .inner-content {
+                                .btn-div {
+                                    .price {
+                                        font-size: 11px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .membership-page {
+                .table-content {
+                    & > .top {
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+            .fight-mixing-page {
+                .fight-mixing-sec {
+                    .fight-select {
+                        label {
+                            font-size: $fs-10;
+                        }
+
+                        .form-group.select-div {
+                            .select2-container {
+                                max-width: 100%;
+                            }
+                        }
+                    }
+
+                    .assign-fight-sec {
+                        .middle-sec {
+                            .inner-block {
+                                table {
+                                    td {
+                                        .delete-icon,
+                                        .unlock-icon {
+                                            padding: 10px 0;
+                                            display: flex;
+                                            width: 44px;
+                                            justify-content: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .main-section {
+        .right-section {
+            .profile-page {
+                .profile-summary {
+                    .block {
+                        &.finished-fight {
+                            ul {
+                                li {
+                                    .left {
+                                        .desc {
+                                            p {
+                                                span {
+                                                    display: block;
+                                                    margin: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .right {
+                                        .status {
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .profile-gallery {
+                        .fight-img-block {
+                            img {
+                                height: 280px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .add-fighter {
+                .table-content {
+                    .table-main-sec {
+                        .middle {
+                            .row-block {
+                                .select-radio-block {
+                                    margin-left: 20px;
+
+                                    .dropdown {
+                                        .dropdown-toggle {
+                                            min-width: 100%;
+                                            padding-right: 30px;
+                                        }
+                                    }
+
+                                    .form-group {
+                                        &.select-div {
+                                            select {
+                                                width: 100%;
+                                                min-width: 150px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .fight-mixing-page {
+                .fight-mixing-sec {
+                    .assign-fight-sec {
+                        .middle-sec {
+                            .inner-block {
+                                table {
+                                    .fighter-block {
+                                        .menu-img {
+                                            margin-right: 0;
+                                        }
+
+                                        .fighter-sec {
+                                            img {
+                                                margin-right: 5px;
+                                            }
+                                        }
+
+                                        h4 {
+                                            margin: 0;
+                                            font-size: $fs-12;
+                                        }
+                                    }
+                                }
+
+                                &.unassigned-Fighters {
+                                    .top {
+                                        .left {
+                                            .form-group {
+                                                &.select-div {
+                                                    select {
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .fight-mixing-page {
+                .fight-mixing-sec {
+                    .row {
+                        .col {
+                            width: 33.33%;
+                            max-width: 33.33%;
+                            flex: inherit;
+                        }
+                    }
+
+                    .fight-select {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+
+            .flow-chart-page {
+                .flow-chart-sec {
+                    .inner-content {
+                        & > .top {
+                            flex-wrap: wrap;
+
+                            .right {
+                                margin-top: 20px;
+                            }
+                        }
+
+                        &.unassigned-Fighters {
+                            .top {
+                                .left {
+                                    .form-group {
+                                        &.select-div {
+                                            select {
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .main-section {
+        .right-section {
+            .event-page {
+                .finished-fight {
+                    .inner-block {
+                        .middle-block {
+                            ul {
+                                li {
+                                    .block {
+                                        h3 {
+                                            font-size: 13px;
+                                            min-width: 60px;
+                                            max-width: 60px;
+                                        }
+
+                                        .start {
+                                            img {
+                                                margin: 0 10px;
+                                            }
+                                        }
+
+                                        .middle {
+                                            .rounds {
+                                                span {
+                                                    min-width: 80px;
+                                                }
+
+                                                & > div {
+                                                    padding: 0;
+                                                }
+                                            }
+                                        }
+
+                                        .last {
+                                            .status-win {
+                                                margin-right: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .profile-page {
+                .top-bg {
+                    height: auto;
+                    // .profile-detail {
+                    //   .img-desc {
+                    //     .img-box {
+                    //       img {
+                    //         width: 180px;
+                    //         height: 180px;
+                    //       }
+                    //     }
+                    //   }
+                    // }
+                }
+            }
+
+            .medical-page.upload {
+                .medical-record-sec {
+                    .medical-data-upload {
+                        .data-upload-block {
+                            .select-block {
+                                .form-group {
+                                    margin-bottom: 15px;
+                                }
+
+                                .upload-delete-btn {
+                                    margin-top: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .fight-mixing-page {
+                .fight-mixing-sec {
+                    .assign-fight-sec {
+                        .middle-sec {
+                            .inner-block {
+                                &.unassigned-Fighters {
+                                    .top {
+                                        .left {
+
+                                            .plus-icon {
+                                                margin: 0 20px 0;
+                                            }
+
+                                            .form-group {
+                                                &.select-div {
+                                                    margin-left: 10px;
+
+                                                    select {
+                                                        max-width: 270px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .main-section {
+        .right-section {
+            .flow-chart-page {
+                .flow-chart-page {
+                    .flow-chart-sec {
+                        .inner-content {
+                            &.unassigned-Fighters {
+                                .top {
+                                    .left {
+                                        .form-group {
+                                            &.select-div {
+                                                select {
+                                                    max-width: 200px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .main-section {
+        .right-section {
+            .event-sec {
+                .events {
+                    .top-block {
+                        flex-wrap: wrap;
+
+                        .right-sec {
+                            margin-top: 15px;
+
+                            ul {
+                                li {
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .event-page {
+                .top-bg {
+                    height: 400px;
+                }
+            }
+
+            .club-page {
+                .events {
+                    .top-block {
+                        flex-wrap: wrap;
+
+                        .right-sec {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+
+            .profile-page {
+                .top-bg {
+                    height: auto;
+
+                    .profile-detail {
+                        .img-desc {
+                            display: block;
+
+                            .desc {
+                                margin-left: 0;
+
+                                .active-member,
+                                .inactive-member,
+                                .past-member,
+                                .excepted-memeber,
+                                .watting-member {
+                                    position: absolute;
+                                    top: 120px;
+                                    left: 234px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .profile-summary {
+                    .profile-gallery {
+                        .fight-img-block {
+                            img {
+                                height: 200px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .membership-page {
+                .table-content {
+                    & > .top {
+                        &.membership-top {
+                            .right-btn {
+                                justify-content: space-between;
+
+                                a.btn-outline, .form-group, a.btn-red {
+                                    max-width: calc(50% - 10px);
+                                    width: 100%;
+                                    margin: 0 0 20px;
+                                }
+                            }
+
+                            &.add-filter-button {
+                                .right-btn {
+                                    .form-group {
+                                        margin-right: 0;
+
+                                        .form-control {
+                                            max-width: 100%;
+                                        }
+                                    }
+
+                                    .form-area {
+                                        max-width: calc(50% - 10px);
+                                        width: 100%;
+                                    }
+
+                                    .filter_wrap {
+                                        margin: 0;
+
+                                        .filter_btn {
+                                            button {
+                                                min-width: inherit;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    a {
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .right-btn {
+                            flex-wrap: wrap;
+
+                            button,
+                            a {
+                                margin-bottom: 20px;
+
+                                &.btn-red {
+                                    margin-bottom: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .add-fighter {
+                .table-content {
+                    .table-main-sec {
+                        .middle {
+                            .row-block {
+                                flex-wrap: wrap;
+
+                                .chk-block {
+                                    max-width: 100%;
+
+                                    .custom-checkbox {
+                                        .custom-control-label {
+                                            &:before {
+                                                top: 8px;
+                                            }
+
+                                            &:after {
+                                                top: 8px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .select-radio-block {
+                                    margin: 20px 0 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .fight-mixing-page {
+
+
+                &.fight-max-height {
+                    .fight-mixing-sec {
+                        max-height: inherit;
+                    }
+                }
+
+                .fight-mixing-sec {
+                    max-height: inherit;
+                    overflow: inherit;
+
+                    .assign-fight-sec {
+
+                        & > .top {
+                            display: block;
+                            margin-bottom: 20px;
+                        }
+
+                        .middle-sec {
+                            .inner-block {
+                                table {
+                                    display: none;
+                                }
+
+                                .fighter-mixing-mobile {
+                                    display: block;
+                                }
+
+                                &.unassigned-Fighters {
+                                    position: static;
+                                    width: 100%;
+                                    height: auto !important;
+                                    overflow: auto;
+
+                                    .top {
+                                        .left {
+                                            display: block;
+
+                                            .plus-icon {
+                                                margin: 0;
+                                            }
+
+                                            .form-group {
+                                                &.select-div {
+                                                    margin: 15px 0 0;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .middle-sec {
+                                        .unassigned-block {
+                                            max-height: inherit;
+                                            overflow: inherit;
+                                            padding: 0 25px;
+
+                                            .unassigned-box-sec {
+                                                display: block;
+
+                                                .dro {
+                                                    width: 100%;
+                                                }
+
+                                                .unassigned-box {
+                                                    margin: 0 0 15px;
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .tournament-info-box > div:first-child {
+                        display: block;
+
+                        img {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .flow-chart-page {
+                &.fight-max-height {
+                    .flow-chart-sec {
+                        max-height: inherit;
+                    }
+                }
+
+                .flow-chart-sec {
+                    max-height: inherit;
+                    overflow: inherit;
+
+                    .inner-content {
+                        &.flow-chart-content {
+                            max-height: 100%;
+                            padding-bottom: 15px;
+                        }
+
+                        .flow-chart-inner-content {
+                            .scroll-div {
+                                max-height: 100% !important;
+                            }
+                        }
+
+                        .flow-save-btn {
+                            position: static;
+                            width: 100%;
+                        }
+
+                        &.unassigned-Fighters {
+                            position: static;
+                            width: 100%;
+                            height: auto;
+                            overflow: auto;
+
+                            .top {
+                                position: relative;
+
+                                .left {
+                                    display: block;
+                                    width: calc(100% - 150px);
+
+                                    a {
+                                        position: absolute;
+                                        right: 0;
+                                        top: 10px;
+                                    }
+
+                                    .form-group {
+                                        &.select-div {
+                                            margin: 15px 0 0;
+
+                                            select {
+                                                max-width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .box-resize-btn {
+                                    margin-top: 38px;
+                                }
+                            }
+
+                            .middle-sec {
+                                .unassigned-block {
+                                    max-height: inherit;
+                                    overflow: inherit;
+                                    padding: 0 25px;
+
+                                    .unassigned-box-sec {
+                                        display: block;
+
+                                        .inner-block {
+                                            width: 100%;
+                                        }
+
+                                        .unassigned-box {
+                                            margin: 0 0 15px;
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .tournament-info-box > div:first-child {
+                        display: block;
+
+                        img {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px) and (max-width: 1440px) {
+    .main-section {
+        .right-section {
+            .table-section {
+                .table-content {
+                    .table-main-sec {
+                        overflow: auto;
+
+                        table {
+                            .top {
+                                // th {
+                                //   min-width: 100px;
+                                // }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .main-section {
+        .right-section {
+            .table-section {
+                .table-content {
+                    .table-main-sec {
+                        overflow: auto;
+                        // white-space: nowrap;
+                        table {
+                            .top {
+                                th {
+                                    padding: 24px 15px 25px;
+                                    min-width: 100px;
+
+                                    h2 {
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .password_rule {
+
+        .password_details {
+            min-width: 350px;
+
+            .close-password-rule-btn {
+                visibility: visible;
+                top: 12px;
+            }
+        }
+    }
+
+    .main-section {
+        .right-section {
+            .table-section {
+                .table-content {
+                    .table-main-sec {
+                        box-shadow: none;
+                        border: none;
+                        border-radius: 0;
+                        background: transparent;
+
+                        .desktop-table {
+                            display: none;
+                        }
+
+                        .mobile-table-sec {
+                            display: block;
+                        }
+
+                        table {
+
+                            tbody {
+                                max-height: inherit;
+                            }
+
+                            tr {
+                                display: block;
+
+                                td, th {
+                                    display: flex;
+                                    max-width: 100%;
+                                }
+                            }
+
+                            tbody {
+                                tr {
+                                    box-shadow: 0px 3px 6px #e3e5ea33;
+                                    border: 1px solid $border-color;
+                                    border-radius: 4px;
+                                    background: #fff;
+                                    margin-bottom: 20px;
+
+                                    td {
+                                        padding: 20px 15px 20px;
+
+                                        &:before {
+                                            font-family: $Secondary-font-family;
+                                            font-weight: $fw-600;
+                                            font-size: 22px;
+                                            line-height: 31px;
+                                        }
+
+                                        &:first-child {
+                                            padding-left: 15px;
+                                        }
+
+                                        &:last-child {
+                                            padding-right: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.default-table {
+                    .table-content {
+                        .table-main-sec {
+                            white-space: normal;
+
+                            table {
+                                tr {
+                                    td {
+                                        .alert {
+                                            display: block;
+                                            margin: 5px;
+                                        }
+
+                                        .crate-plan {
+                                            flex-wrap: wrap;
+
+                                            .form-group {
+                                                margin-right: 0;
+                                                margin-bottom: 5px;
+
+                                                &.create-amount {
+                                                    min-width: 100%;
+
+                                                    input {
+                                                        max-width: 100%;
+                                                    }
+                                                }
+
+                                                &.select-div {
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.training-details {
+                    .table-content {
+                        .top {
+                            flex-wrap: wrap;
+
+                            .class-btn-right {
+                                width: 100%;
+                                justify-content: space-between;
+
+                                a {
+                                    margin: 0;
+                                    width: calc(50% - 5px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .scrollable-table {
+                .table-content {
+                    .table-main-sec {
+                        white-space: normal;
+                        overflow: inherit;
+
+                        table {
+                            table-layout: inherit;
+                            width: 100%;
+
+                            th, td {
+                                width: auto;
+                                min-width: inherit;
+                            }
+
+                            thead {
+                                display: inherit;
+                            }
+
+                            tbody {
+                                overflow: inherit;
+                                display: block;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .membership-page {
+                .table-content {
+                    .accept-decline-block {
+                        .box {
+                            flex-direction: row-reverse;
+                            flex-wrap: wrap-reverse;
+
+                            & > div {
+                                width: 100%;
+                            }
+
+                            p {
+                                margin: 0 0 21px;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .table-main-sec {
+                        table {
+                            &.membership-desktop {
+                                display: none;
+                            }
+
+                            &.memberhsip-mobile {
+                                display: block;
+
+                                tr {
+                                    td {
+                                        &.full-text {
+                                            white-space: nowrap;
+                                            flex-wrap: wrap;
+
+                                            a, label {
+                                                width: 100%;
+                                                margin: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            tbody {
+                                tr {
+                                    td {
+                                        &:first-child {
+                                            padding-left: 15px;
+                                        }
+
+                                        &:last-child {
+                                            padding-right: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .add-fighter {
+                .table-content {
+                    .table-main-sec {
+                        padding: 0;
+
+                        & > .top {
+                            display: block;
+                            border: none;
+                            padding-bottom: 30px;
+
+                            .form-group {
+                                margin-bottom: 14px;
+
+                                label {
+                                    font-size: $fs-10;
+                                }
+
+                                &.select-div {
+                                    width: 100%;
+                                    margin-bottom: 14px;
+                                }
+                            }
+
+                            .div-btn {
+                                width: 100%;
+                            }
+
+                            .btn-red {
+                                min-width: 100%;
+                                margin: 33px 0 0;
+                            }
+                        }
+
+                        .middle {
+                            box-shadow: 0px 3px 6px #e3e5ea33;
+                            border: 1px solid $border-color;
+                            border-radius: 4px;
+                            background: $white;
+                            padding: 25px 14px;
+                            max-height: inherit;
+                            border-bottom: none;
+                            overflow: inherit;
+
+                            .row-block {
+                                box-shadow: 0px 3px 6px #e3e5ea33;
+                                border: 1px solid $border-color;
+                                border-radius: 4px;
+                                padding: 20px 14px;
+                                margin-bottom: 15px;
+
+                                .select-radio-block {
+                                    width: 100%;
+
+                                    .form-group {
+                                        width: 100%;
+
+                                        &.select-div {
+                                            select {
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+
+                                    .dropdown {
+                                        width: 100%;
+
+                                        .dropdown-toggle {
+                                            width: 100%;
+                                            white-space: normal;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .bottom {
+                            box-shadow: 0px 3px 6px #e3e5ea33;
+                            border: 1px solid $border-color;
+                            border-top: none;
+                            border-radius: 4px;
+                            background: $white;
+                            padding: 25px 15px;
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+
+            .invoice-page {
+                .table-content {
+                    .table-main-sec {
+                        padding: 15px 20px 35px;
+                        box-shadow: 0px 3px 6px #e3e5ea33;
+                        border: 1px solid $border-color;
+                        border-radius: 4px;
+                        background: $white;
+                    }
+                }
+            }
+
+            .event-sec {
+                .payment-page {
+                    .payment-event {
+                        .form-area {
+                            &.document-page {
+                                .table-content {
+                                    table {
+                                        tbody {
+                                            height: auto;
+
+                                            tr {
+                                                display: block;
+
+                                                td {
+                                                    display: flex;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .register-page {
+        .left {
+            padding: 33px 20px 82px;
+
+            p {
+                &:last-child {
+                    padding: 0 60px;
+                }
+            }
+        }
+    }
+
+    .login-page {
+        .left {
+            .bottom-sec {
+                left: 20px;
+
+                p {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .main-section {
+        .right-section {
+            .event-page {
+                .top-bg {
+                    height: 500px;
+
+                    .top-bottom {
+                        .bottom-title {
+                            display: block;
+
+                            ul {
+                                justify-content: flex-end;
+                            }
+                        }
+                    }
+
+                    .go-back {
+                        padding-top: 16px;
+                    }
+                }
+
+                .event-desc {
+                    .location-block {
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .finished-fight {
+                    .inner-block {
+                        .middle-block {
+                            padding: 0 10px 30px 10px;
+
+                            .btn-center {
+                                padding-top: 30px;
+                                display: block;
+                            }
+
+                            .desktop {
+                                display: none;
+                            }
+
+                            .mobile {
+                                display: block;
+                                padding-right: 0;
+                                overflow: hidden;
+                                max-height: inherit;
+
+                                li {
+                                    border: none;
+                                    padding-top: 20px;
+
+                                    &:after {
+                                        display: none;
+                                    }
+
+                                    .block {
+                                        display: block;
+
+                                        h3 {
+                                            font-size: 14px;
+                                            margin: 0;
+                                            white-space: nowrap;
+                                            text-overflow: ellipsis;
+                                            width: 114px;
+                                            overflow: hidden;
+                                            min-width: inherit;
+                                            max-width: 114px;
+                                        }
+
+                                        .start {
+                                            text-align: center;
+                                            display: block;
+
+                                            span {
+                                                display: block;
+                                                box-shadow: none;
+                                                margin-bottom: 5px;
+                                            }
+
+                                            h4 {
+                                                text-transform: uppercase;
+                                                letter-spacing: 0.86px;
+                                                font-size: $fs-12;
+                                                font-weight: 500;
+                                                color: $light-grey;
+                                                line-height: 14px;
+                                                margin-bottom: 20px;
+                                                font-family: $primary-font-family;
+                                            }
+                                        }
+
+                                        .middle {
+                                            display: flex;
+                                            justify-content: center;
+                                            width: 100%;
+                                            align-items: center;
+                                            max-width: 100%;
+
+                                            .status-win {
+                                                position: relative;
+
+                                                span {
+                                                    height: 24px;
+                                                    border-radius: 3px;
+                                                    box-shadow: 0 3px 6px 0 rgba(135, 168, 255, 0.11);
+                                                    background-color: $gold;
+                                                    color: $white;
+                                                    font-size: $fs-12;
+                                                    font-weight: $fw-600;
+                                                    text-transform: uppercase;
+                                                    padding: 0 12px;
+                                                    line-height: 24px;
+                                                    display: inline-block;
+                                                    position: absolute;
+                                                    bottom: -23px;
+                                                    left: 50%;
+                                                    transform: translate(-50%, 0);
+                                                }
+                                            }
+
+                                            .name {
+                                                margin: 0 22px;
+
+                                                & > span {
+                                                    margin: 10px 0;
+                                                    display: block;
+                                                }
+
+                                                .vs {
+                                                    position: relative;
+                                                    border-top: 1px solid #f5f5f5;
+                                                    width: 74px;
+                                                    margin: 17px auto;
+                                                    height: auto;
+
+                                                    b {
+                                                        background: $white;
+                                                        position: absolute;
+                                                        top: -8px;
+                                                        width: auto;
+                                                        font-weight: 600;
+                                                        padding: 0 10px;
+                                                        left: 50%;
+                                                        text-align: center;
+                                                        transform: translate(-50%);
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .last {
+                                            .rounds {
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: space-between;
+                                                width: 100%;
+                                                border-top: 1px solid $border-color;
+                                                border-bottom: 1px solid $border-color;
+                                                margin-top: 27px;
+
+                                                & > div {
+                                                    padding: 5px 10px 7px;
+                                                    max-width: 33%;
+                                                    width: 100%;
+                                                    text-align: center;
+
+                                                    &:nth-child(2) {
+                                                        border-left: 1px solid $border-color;
+                                                        border-right: 1px solid $border-color;
+                                                        padding: 5px 30px 7px;
+                                                    }
+                                                }
+
+                                                span {
+                                                    color: $light-grey;
+                                                    margin: 0;
+                                                    letter-spacing: 0.86px;
+                                                    font-weight: 500;
+                                                    min-width: 60px;
+                                                    display: block;
+                                                    text-transform: uppercase;
+                                                    font-size: $fs-12;
+                                                    text-align: center;
+
+                                                    &:last-child {
+                                                        color: $black;
+                                                        letter-spacing: normal;
+                                                        font-size: $fs-14;
+                                                        line-height: 18px;
+                                                        margin-top: 5px;
+                                                        font-weight: $fw-600;
+                                                    }
+                                                }
+
+                                                .select2.select2-container {
+                                                    width: auto;
+                                                    max-width: inherit;
+                                                    text-overflow: inherit;
+                                                    white-space: normal;
+                                                    overflow: visible;
+                                                    min-width: 80px;
+                                                    text-transform: capitalize;
+                                                    display: inline-block;
+                                                    text-align: left;
+                                                    padding-top: 0;
+                                                    margin-top: 0;
+
+                                                    .select2-selection__rendered {
+                                                        padding-top: 0;
+                                                        min-width: inherit;
+                                                        margin-top: -1px;
+                                                        text-align: left;
+                                                    }
+                                                }
+
+                                                .select2-container--default {
+                                                    .select2-selection--single {
+                                                        .select2-selection__arrow {
+                                                            b {
+                                                                left: 85%;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .club-page {
+                .events {
+                    .top-block {
+                        flex-wrap: wrap;
+
+                        .right-sec {
+                            margin-top: 15px;
+                            width: 100%;
+                        }
+                    }
+
+                    .middle-block {
+                        .event-box {
+                            .inner-content {
+                                .btn-div {
+                                    .price {
+                                        font-size: $fs-12;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .event-sec {
+                .payment-page {
+                    padding: 0 15px 40px;
+                }
+
+                .top-bg {
+                    .go-back {
+                        padding-top: 16px;
+                    }
+                }
+
+                .top-sec {
+                    .search-left {
+                        #search-block {
+                            width: 100%;
+                        }
+
+                        .fed-block {
+                            &.desktop {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                .fed-block {
+                    &.mobile {
+                        padding: 20px 40px 0;
+                        display: block;
+                    }
+                }
+            }
+
+            .profile-page {
+                .top-bg {
+                    .profile-detail {
+                        .edit-link {
+                            display: flex;
+                            flex-wrap: wrap;
+                            max-width: 120px;
+                            position: absolute;
+                            top: 40px;
+                            right: 40px;
+
+                            a {
+                                margin: 0 0 15px 15px;
+                            }
+                        }
+                    }
+                }
+
+                .profile-summary {
+                    .block {
+                        &.general-block {
+                            padding-right: 10px;
+                        }
+
+                        &.finished-fight {
+                            ul {
+                                padding: 0 10px;
+
+                                li {
+                                    .right {
+                                        .btn {
+                                            flex-wrap: wrap;
+                                            justify-content: center;
+
+                                            span {
+                                                margin: 1px 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .profile-gallery {
+                        .fight-img-block {
+                            img {
+                                height: 150px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .medical-page {
+                .medical-record-sec {
+                    .not-public {
+                        float: none;
+                        text-align: left;
+                        padding-top: 30px;
+                        padding-right: 35px;
+
+                        h2 {
+                            float: none;
+                            width: 100%;
+                        }
+                    }
+
+                    p.text {
+                        margin: 20px 0 0;
+                        text-align: left;
+                    }
+                }
+            }
+
+            .dashboard-page {
+                .dashboard-sec {
+                    & > .top {
+                        display: block;
+
+                        .left {
+                            margin: 0 0 30px;
+                        }
+                    }
+                }
+            }
+
+            .fight-mixing-page {
+                .fight-mixing-sec {
+                    .row {
+                        .col {
+                            width: 50%;
+                            max-width: 50%;
+                        }
+                    }
+
+                    .fight-btn {
+                        margin-top: 0;
+                    }
+
+                    .assign-fight-sec {
+                        & > .top {
+                            display: block;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .flow-chart-page {
+                .flow-chart-sec {
+                    .inner-content {
+                        & > .top {
+                            .left {
+                                width: 100%;
+
+                                .form-group {
+                                    &.select-div {
+                                        width: 33.3333%;
+
+                                        select {
+                                            width: 100%;
+                                        }
+
+                                        .selection {
+                                            .select2-selection--single {
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .right {
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                width: 100%;
+
+                                .custom-checkbox {
+                                    margin-bottom: 20px;
+                                }
+
+                                .btn-outline {
+                                    width: 100%;
+                                    margin-bottom: 20px;
+                                    margin-left: 0;
+
+                                    &.approve-all-medical-btn {
+                                        width: calc(100% - 24px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .membership-page {
+                .table-content {
+                    & > .top {
+                        &.membership-top {
+                            .right-btn {
+                                display: block;
+
+                                a.btn-outline, .form-group, a.btn-red {
+                                    max-width: 100%;
+                                    width: 100%;
+                                    margin: 0 0 20px;
+                                }
+
+                                .form-group {
+                                    display: none;
+
+                                    &.mobile {
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            &.add-filter-button {
+                                .right-btn {
+                                    .form-area {
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .search-box.mobile {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .search-dropdown {
+        left: 15px;
+        margin-top: 0;
+    }
+
+    .password_rule {
+
+        .password_details {
+            min-width: 100%;
+            width: 100%;
+            max-width: 580px;
+        }
+    }
+
+    .register-page {
+        .right {
+            display: none;
+        }
+
+        .left {
+            width: 100%;
+            padding: 23px 15px 33px;
+
+            .left-inner {
+                max-width: 100%;
+                float: none;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 30px;
+                max-width: 100%;
+                float: none;
+
+                img {
+                    opacity: 0.5;
+                }
+
+                a.login-btn {
+                    display: inline-block;
+                }
+            }
+
+            h1 {
+                margin-bottom: 10px;
+                max-width: 100%;
+                float: none;
+            }
+
+            p {
+                max-width: 344px;
+                margin: 0 0 22px;
+                padding: 0;
+                float: none;
+
+                &:last-child {
+                    max-width: 258px;
+                    padding: 0;
+                }
+            }
+
+            form {
+                max-width: 100%;
+                float: none;
+            }
+
+            .form-sec {
+                .form-group,
+                .select-one {
+                    margin-bottom: 10px;
+                }
+
+                button.btn {
+                    margin-bottom: 50px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+
+    .login-page {
+        .left {
+            text-align: center;
+            padding-bottom: 70px;
+
+            .logo {
+                margin-bottom: 40px;
+                justify-content: center;
+                max-width: 100%;
+                float: none;
+            }
+
+            h1 {
+                margin-bottom: 12px;
+                max-width: 100%;
+                float: none;
+            }
+
+            p {
+                margin: 0 auto 20px;
+                max-width: 290px;
+            }
+
+            form {
+                max-width: 100%;
+                float: none;
+                margin-bottom: 30px;
+            }
+
+            .form-sec {
+                .custom-sec {
+                    a {
+                        display: none;
+                    }
+                }
+
+                button.btn {
+                    margin-bottom: 28px;
+                    margin-top: 22px;
+                }
+            }
+
+            .forgot-link {
+                display: block;
+            }
+
+            .bottom-sec {
+                bottom: 27px;
+                text-align: center;
+                width: calc(100% - 30px);
+                max-width: 100%;
+                left: 15px;
+
+                p {
+                    text-align: center;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .main-section {
+        aside.sidebar {
+            display: none;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            background: #000;
+            bottom: 0;
+            width: 100%;
+            z-index: 99999;
+            display: block;
+            padding: 25px 35px 25px;
+            box-shadow: 0 -5px 15px 0 rgba(0, 0, 0, 0.05);
+
+            ul.menu {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                li {
+                    padding: 0;
+                    // &:first-child {
+                    //     padding-left: 0;
+                    // }
+                    // &:last-child {
+                    //     padding-right: 0;
+                    // }
+                    a {
+                        svg {
+                            max-width: 23px;
+                            max-height: 23px;
+
+                            g,
+                            path {
+                                stroke: $dark;
+                            }
+                        }
+
+                        &:hover {
+                            svg {
+                                g,
+                                path {
+                                    stroke: $gold;
+                                }
+                            }
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            svg {
+                                g,
+                                path {
+                                    stroke: $gold;
+                                }
+                            }
+                        }
+                    }
+
+                    &.mobile-dropdown-menu {
+                        & > a {
+                            svg {
+
+                                g,
+                                path {
+                                    stroke: $dark;
+                                    fill: $dark;
+                                }
+                            }
+
+                            &:hover {
+                                svg {
+                                    g,
+                                    path {
+                                        stroke: $gold;
+                                        fill: $gold;
+                                    }
+                                }
+                            }
+                        }
+
+                        ul {
+                            position: absolute;
+                            bottom: 104px;
+                            text-align: center;
+                            transition: all 0.5s;
+                            transform: translate(200px, 0);
+
+                            &.popped {
+                                transform: translate(0, 0);
+                            }
+
+                            li {
+                                margin-top: 29px;
+
+                                a {
+                                    svg {
+                                        max-width: 23px;
+                                        max-height: 23px;
+
+                                        g,
+                                        path, .a {
+                                            stroke: $white;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        svg {
+                                            g,
+                                            path, .a {
+                                                stroke: $gold;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.active {
+                                    a {
+                                        svg {
+                                            g,
+                                            path, .a {
+                                                stroke: $gold;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-section {
+            margin-left: 0;
+            padding: 0;
+            height: 100%;
+            margin-bottom: 74px;
+            max-height: 100%;
+
+            .event-sec {
+                border-radius: 0;
+                background: $lightBg;
+
+                .top-sec {
+                    height: auto;
+                    flex-wrap: wrap-reverse;
+                    flex-direction: row-reverse;
+                    background: none;
+                    padding: 0;
+
+                    & > div {
+                        width: 100%;
+                    }
+
+                    .search-left {
+                        width: 100%;
+                    }
+
+                    .searchbar {
+                        background: #fff;
+                        height: 50px;
+                        padding: 0 20px;
+                    }
+
+                    .top-right-sec {
+                        background: $black;
+                        height: 50px;
+                        padding: 0 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        .logo {
+                            display: block;
+
+                            img {
+                                max-width: 122.8px;
+                            }
+                        }
+
+                        & > ul {
+                            & > li {
+                                a {
+                                    i.fa-bell {
+                                        color: $dark;
+                                    }
+
+                                    .bages {
+                                        border-color: $black;
+                                    }
+                                }
+
+                                &:last-child {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .events {
+                    padding: 19px 15px 40px;
+
+                    .top-heading {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 24px;
+
+                        h1 {
+                            margin: 0;
+                        }
+
+                        a.plus-icon {
+                            display: block;
+                            background: $red;
+                            width: 50px;
+                            height: 50px;
+                            box-shadow: 0 2px 7px 0 rgba($red, 0.3);
+                            border-radius: 50%;
+                            color: $light-bg;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: none;
+                            padding: 0;
+                            min-width: 50px;
+                        }
+                    }
+
+                    .top-block {
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        margin-bottom: 10px;
+
+                        .left-sec {
+                            ul {
+                                li {
+                                    & ~ li {
+                                        a {
+                                            background: none;
+                                            min-width: 108px;
+                                            padding: 12.5px 15px;
+                                        }
+
+                                        &:nth-child(3) a {
+                                            border-radius: 0 6px 6px 0;
+                                        }
+                                    }
+
+                                    a {
+                                        padding: 12.5px 20px;
+                                    }
+
+                                    &.like {
+                                        display: block;
+                                        margin-left: 10px;
+
+                                        a {
+                                            border-radius: 6px !important;
+                                            font-size: 16px;
+                                            padding: 9.5px 18px;
+                                            min-width: inherit;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .right-sec {
+                            width: 100%;
+                            margin-top: 10px;
+
+                            ul {
+                                justify-content: space-between;
+                                flex-direction: row-reverse;
+
+                                li {
+                                    width: calc(50% - 5.5px);
+                                    margin: 0;
+                                    // &:first-child,
+                                    &:last-child {
+                                        display: none;
+                                    }
+
+                                    & > a {
+                                        padding: 12.5px 15px;
+
+                                        &.dropdown-toggle {
+                                            padding-right: 24px;
+                                        }
+
+                                        &:after {
+                                            right: 12px;
+                                            top: 20px;
+                                            position: absolute;
+                                        }
+                                    }
+
+                                    .dropdown-menu {
+                                        width: 100%;
+                                        max-height: calc(100vh - 370px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .middle-block {
+                        .event-box {
+                            background: $white;
+                            margin-bottom: 10px;
+
+                            & > img {
+                                height: 133px;
+                            }
+
+                            .inner-content {
+                                position: relative;
+                                padding: 15px 10px;
+
+                                p {
+                                    margin-bottom: 10px;
+                                }
+
+                                .price {
+                                    position: absolute;
+                                    top: 15px;
+                                    right: 15px;
+                                    margin: 0;
+                                    padding: 0 12px;
+                                }
+                            }
+                        }
+
+                        .btn-center {
+                            a {
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .fed-block {
+                    &.mobile {
+                        padding: 15px;
+                    }
+                }
+            }
+
+            .event-page {
+                .top-bg {
+                    height: 500px;
+
+                    .top-sec {
+                        & > div {
+                            width: 100%;
+                        }
+
+                        .searchbar {
+                            background: none;
+                        }
+
+                        .top-right-sec {
+                            width: 100%;
+
+                            ul {
+                                li {
+                                    a {
+                                        i.fa-bell {
+                                            color: $dark;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .go-back {
+                        padding-left: 15px;
+                        padding-top: 5px;
+
+                        .top-bottom {
+                            display: block;
+                            box-shadow: none;
+                            position: static;
+                            background: none;
+
+                            .bottom-title {
+                                ul {
+                                    display: flex;
+                                    top: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .top-bottom {
+                        padding: 12px 15px 25px;
+
+                        .top-tag {
+                            display: block;
+                            margin-bottom: 15px;
+
+                            & > span {
+                                margin: 0 6px 15px 0;
+                            }
+
+                            p {
+                                font-weight: $fw-300;
+                            }
+                        }
+
+                        .bottom-title {
+                            h1 {
+                                max-width: 240px;
+                            }
+
+                            ul {
+                                display: none;
+                                justify-content: flex-end;
+                                position: absolute;
+                                top: -183px;
+                                right: 15px;
+                                max-width: 130px;
+                                flex-wrap: wrap;
+
+                                li {
+                                    margin-bottom: 15px;
+                                    margin-left: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .event-desc {
+                    padding: 23px 15px 15px;
+
+                    .box {
+                        padding: 10px 10px 15px;
+
+                        p {
+                            line-height: 19.5px;
+                        }
+                    }
+
+                    .location-block {
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .finished-fight {
+                    padding: 0 15px 40px;
+
+                    .inner-block {
+                        .top {
+                            padding: 15px 15px 20px;
+                            box-shadow: none;
+                        }
+
+                        .middle-block {
+                            padding: 0 10px 30px 10px;
+
+                            .mobile {
+                                li {
+                                    &:first-child {
+                                        padding-top: 0;
+                                    }
+
+                                    &:last-child {
+                                        padding-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .club-page {
+                .events {
+                    .top-block {
+                        flex-wrap: wrap;
+
+                        .right-sec {
+                            ul {
+                                li {
+                                    &:first-child {
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .middle-block {
+                        .event-box {
+                            & > img {
+                                height: 131px;
+                            }
+
+                            .inner-content {
+                                padding: 10px 10px 15px;
+
+                                .text-change {
+                                    display: flex;
+                                    flex-direction: row-reverse;
+                                    flex-wrap: wrap-reverse;
+
+                                    span,
+                                    p {
+                                        display: block;
+                                        width: 100%;
+                                    }
+
+                                    p {
+                                        margin: 10px 0 0;
+                                    }
+                                }
+
+                                .btn-div {
+                                    .price {
+                                        position: static;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .club-detail {
+                .top-bg {
+                    .go-back {
+                        .top-bottom {
+                            .bottom-title {
+                                ul {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .event-desc {
+                    padding: 23px 15px 40px;
+                }
+            }
+
+            .profile-page {
+                background: #131313;
+
+                .top-bg {
+                    height: auto;
+
+                    .profile-detail {
+                        padding: 20px 15px 74px;
+                        align-items: flex-start;
+                        flex-wrap: wrap;
+
+                        .img-desc {
+                            width: 100%;
+
+                            .img-box {
+                                img {
+                                    height: 100px;
+                                    width: 100px;
+                                    border-width: 3.5px;
+                                    min-width: 100px;
+                                }
+                            }
+
+                            .desc {
+                                max-width: 100%;
+
+                                .active-member,
+                                .inactive-member,
+                                .past-member,
+                                .excepted-memeber,
+                                .watting-member {
+                                    top: 60px;
+                                    left: 130px;
+                                }
+
+                                .description_scroll {
+                                    max-height: inherit;
+                                }
+
+                                p {
+                                    font-size: $fs-14;
+                                    font-weight: $fw-300;
+                                    max-width: 100%;
+                                    line-height: 18px;
+                                    max-height: inherit;
+                                }
+                            }
+                        }
+
+                        .edit-link {
+                            display: flex;
+                            flex-wrap: wrap;
+                            max-width: 120px;
+                            position: absolute;
+                            top: 22px;
+                            right: 15px;
+
+                            a {
+                                margin: 0 0 15px 15px;
+                            }
+                        }
+                    }
+                }
+
+                .profile-summary {
+                    padding: 0 15px;
+
+                    .block {
+                        padding: 15px 10px 20px;
+                        margin-bottom: 10px;
+
+                        .top {
+                            margin: 0;
+                        }
+
+                        &.finished-fight {
+                            .top {
+                                padding: 15px 10px 0;
+                                box-shadow: none;
+                            }
+
+                            .fight-belt {
+                                padding: 15px 10px;
+
+                                .belt-block {
+                                    margin-bottom: 10px;
+                                }
+                            }
+
+                            ul {
+                                padding: 0 10px;
+
+                                li {
+                                    .right {
+                                        .btn {
+                                            flex-wrap: wrap;
+                                            justify-content: center;
+
+                                            span {
+                                                margin: 1px 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .profile-gallery {
+                        margin-top: 10px;
+
+                        .fight-img-block {
+                            img {
+                                height: 150px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .medical-page {
+                .medical-record-sec {
+                    padding: 25px 5px 0 15px;
+
+                    .medical-record-title {
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        img {
+                            width: 79px;
+                            height: 79px;
+                        }
+
+                        .not-public {
+                            display: block;
+                            padding-top: 0;
+                            padding-right: 10px;
+
+                            h2 {
+                                float: none;
+                                width: 157px;
+                                font-size: 22px;
+                                height: 38px;
+                                float: none;
+                            }
+                        }
+
+                        .title {
+                            width: 100%;
+                            margin: 15px 0 0;
+
+                            h1 {
+                                line-height: 54px;
+                                font-size: 38px;
+                            }
+                        }
+                    }
+
+                    p.text {
+                        padding: 0;
+                    }
+
+                    .not-public {
+                        display: none;
+                    }
+
+                    .record-sec {
+                        padding-right: 10px;
+                        max-height: inherit;
+                        margin-top: 16px;
+                    }
+                }
+
+                &.upload {
+                    .medical-record-sec {
+                        p.text {
+                            margin: 21px 0 16px;
+                        }
+
+                        .medical-data-upload {
+                            margin-right: 10px;
+
+                            .data-upload-block {
+                                p {
+                                    margin: 0 0 22px;
+                                    line-height: 18px;
+                                }
+
+                                .select-block {
+                                    .upload-delete-btn {
+                                        justify-content: space-between;
+                                        margin-top: 10px;
+
+                                        button,
+                                        a {
+                                            width: 50%;
+                                        }
+                                    }
+
+                                    .form-group {
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .medical-record-history {
+                            margin-right: 10px;
+
+                            .history-block {
+                                .top {
+                                    p {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .setting-page {
+                .setting-sec {
+                    padding: 25px 15px;
+
+                    .top {
+                        h1 {
+                            font-size: 38px;
+                            line-height: 54px;
+                            margin-bottom: 15px;
+                        }
+                    }
+
+                    .middle {
+                        .setting-block {
+                            .setting-box {
+                                padding: 33px 25px 33px 40px;
+
+                                p {
+                                    font-size: 15px;
+                                }
+                            }
+
+                            .form-group.custom-sec {
+                                margin-top: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .add-account-page {
+                .add-account-sec {
+                    padding: 25px 15px 10px;
+
+                    h1 {
+                        line-height: 54px;
+                        margin-bottom: 12px;
+                    }
+
+                    .account-block {
+                        padding: 20px 14px 29px;
+                        margin-bottom: 20px;
+
+                        .form-group {
+                            margin: 23px 0 0;
+
+                            &.document {
+                                label {
+                                    display: inline-block;
+                                    margin: 0;
+                                }
+
+                                span {
+                                    position: static;
+                                    font-size: 12px;
+                                }
+
+                                select {
+                                    margin-top: 10px;
+                                }
+
+                                &:before {
+                                    top: 82px;
+                                }
+                            }
+                        }
+
+                        .btn-red {
+                            margin-top: 30px;
+                            width: 100%;
+                            margin-bottom: 1px;
+                        }
+                    }
+                }
+            }
+
+            .dashboard-page {
+                .dashboard-sec {
+                    padding: 25px 15px;
+
+                    & > .top {
+                        margin-bottom: 16px;
+
+                        .left {
+                            margin-bottom: 11px;
+
+                            h1 {
+                                line-height: 44px;
+                            }
+                        }
+
+                        .right {
+                            a.btn-outline {
+                                margin-bottom: 8px;
+                            }
+                        }
+
+                        &.req-membership-user {
+                            .left {
+                                h1 {
+                                    line-height: 54px;
+                                }
+
+                                .well {
+                                    margin: 10px 0 20px;
+                                    padding: 35px 15px 37px;
+
+                                    p {
+                                        line-height: 18px;
+                                        margin-bottom: 28px;
+                                    }
+
+                                    .btn-red {
+                                        margin-top: 53px;
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .top-text {
+                        margin-bottom: 17px;
+
+                        p {
+                            a {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .dashboard-block {
+                        img {
+                            height: 133px;
+                        }
+
+                        .top {
+                            padding: 14.75px 15px;
+
+                            ul {
+                                margin-bottom: 14px;
+                                justify-content: space-between;
+
+                                li {
+                                    margin: 0;
+                                }
+                            }
+                        }
+
+                        .middle {
+                            padding: 18px 15px 11px;
+                        }
+                    }
+
+                    .btn-center {
+                        margin-top: 13px;
+                        margin-bottom: 5px;
+
+                        a.btn-grey {
+                            font-size: $fs-16;
+                            line-height: 16px;
+                            color: $dark;
+                            text-decoration: underline;
+                            display: inline-block;
+                            border: none;
+                            padding: 0;
+                            height: auto;
+                            width: auto;
+                            letter-spacing: normal;
+                            text-transform: inherit;
+                            font-weight: normal;
+                        }
+
+                        &.mobile {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .table-section {
+                .table-content {
+                    padding: 25px 15px;
+
+                    & > .top {
+                        margin-bottom: 20px;
+
+                        h1 {
+                            line-height: 54px;
+                        }
+                    }
+
+                    .top-text {
+                        margin-bottom: 16px;
+                        margin-top: 0;
+                    }
+
+                    .table-main-sec {
+                        table {
+                            tbody {
+                                tr {
+                                    td {
+                                        .delete {
+                                            display: block;
+                                        }
+
+                                        .delete.active {
+                                            display: inline-block;
+                                        }
+
+                                        &.last-td {
+                                            display: none;
+                                        }
+
+                                        &.second-last-td {
+                                            justify-content: center;
+
+                                            a {
+                                                margin: 0 37.5px;
+                                            }
+
+                                            &:before {
+                                                display: none;
+                                            }
+                                        }
+
+                                        &.hide-in-mobile {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .btn-center {
+                            display: block;
+                            margin-top: 13px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+                // &.class-history {
+                //   .table-content {
+                //     padding: 40px 0 0;
+                //   }
+                // }
+            }
+
+            .default-table {
+                .table-content {
+                    position: relative;
+
+                    & > .top {
+                        .right-btn {
+                            a.plus-icon {
+                                position: absolute;
+                                top: 30px;
+                                right: 15px;
+                            }
+                        }
+                    }
+
+                    .table-main-sec {
+                        table {
+                            tr {
+                                th {
+                                    &:last-child {
+                                        text-align: left;
+                                    }
+                                }
+                            }
+
+                            tbody {
+                                tr {
+                                    td {
+                                        &:last-child {
+                                            display: flex;
+                                            text-align: left;
+                                        }
+
+                                        &.jrt-cell-5 {
+                                            justify-content: space-between;
+
+                                            a {
+                                                margin: 0;
+                                            }
+
+                                            &:before {
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .membership-page {
+                .table-content {
+                    .breadcrumb {
+                        display: none;
+                    }
+
+                    h1 {
+                        line-height: 54px;
+                    }
+
+                    .accept-decline-block {
+                        margin-top: 15px;
+                        margin-bottom: 24.5px;
+                        padding: 0;
+                        padding-bottom: 10px;
+                        box-shadow: none;
+                        background: transparent;
+                        border: none;
+                        border-radius: 0;
+                        border-bottom: 1px solid $border-color;
+
+                        .box {
+                            box-shadow: 0px 3px 6px #e3e5ea33;
+                            border: 1px solid $border-color;
+                            border-radius: 4px;
+                            background: $white;
+                            padding: 24px 15px;
+                            margin-bottom: 20px;
+
+                            p {
+                                line-height: 21.5px;
+                                margin-bottom: 20px;
+
+                                span {
+                                    display: block;
+                                    margin-top: 11px;
+                                }
+                            }
+                        }
+                    }
+
+                    & > .top {
+                        margin-bottom: 30px;
+
+                        h1 {
+                            margin-bottom: 15px;
+                        }
+
+                        .right-btn {
+                            width: 100%;
+
+                            button,
+                            a {
+                                width: 100%;
+                                margin: 0 0 20px;
+
+                                &.btn-red {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .add-fighter {
+                .table-content {
+                    & > .top {
+                        margin-bottom: 16px;
+                    }
+
+                    .table-main-sec {
+                        & > .top {
+                            margin: 0;
+                        }
+
+                        .middle {
+                            .row-block {
+                                .chk-block {
+                                    .custom-checkbox {
+                                        .custom-control-label {
+                                            line-height: 21px;
+                                        }
+                                    }
+                                }
+
+                                .select-radio-block {
+                                    display: block;
+                                    margin-top: 25px;
+
+                                    .form-group {
+                                        margin: 0 0 10px;
+                                    }
+                                }
+                            }
+
+                            .btn-center {
+                                margin-top: 33px;
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        .bottom {
+                            padding: 5px 15px 30px;
+
+                            .btn-red {
+                                width: 100%;
+                                margin: 0;
+
+                                &:first-child {
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .fight-mixing-page {
+                &.fight-max-height {
+                    .fight-mixing-sec {
+                        max-height: inherit;
+                    }
+                }
+
+                .fight-mixing-sec {
+                    padding: 25px 15px;
+                    max-height: inherit;
+                    overflow: inherit;
+
+                    h1 {
+                        line-height: 54px;
+                        margin-bottom: 16px;
+                    }
+
+                    .row {
+                        .col {
+                            width: 100%;
+                            max-width: 100%;
+                        }
+                    }
+
+                    .fight-select {
+                        margin-bottom: 10px;
+                    }
+
+                    .fight-btn {
+                        margin-top: 23px;
+
+                        .btn-red {
+                            width: 50%;
+
+                            &:first-child {
+                                width: 50%;
+                            }
+                        }
+                    }
+
+                    .assign-fight-sec {
+                        padding-top: 25.5px;
+                        margin-top: 30.5px;
+
+                        & > .top {
+                            position: relative;
+
+                            h1 {
+                                line-height: 54px;
+                            }
+
+                            .assign-btn {
+                                flex-wrap: wrap;
+
+                                a {
+                                    margin: 0;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 5px;
+                                }
+
+                                button.btn-red {
+                                    width: 100%;
+                                    margin: 15px 0 0 0;
+                                }
+
+                                .form-group {
+                                    width: 100%;
+                                    margin: 15px 0 0 0;
+
+                                    &.approve-all-btn-sec {
+                                        margin-right: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        .middle-sec {
+                            .inner-block {
+                                &.unassigned-Fighters {
+                                    height: auto !important;
+                                    overflow: auto;
+                                    position: static;
+                                    width: 100%;
+
+                                    .top {
+                                        border-bottom: none;
+                                        padding: 25px 15px 15px;
+
+                                        button {
+                                            display: none;
+                                        }
+
+                                        .left {
+                                            width: 100%;
+                                            position: relative;
+
+                                            a.plus-icon {
+                                                position: absolute;
+                                                top: -6px;
+                                                right: 0;
+                                            }
+
+                                            .form-group {
+                                                width: 100%;
+
+                                                &.select-div {
+                                                    select {
+                                                        max-width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .middle-sec {
+                                        .unassigned-block {
+                                            padding: 0 15px;
+
+                                            .unassigned-box-sec {
+                                                margin: 0 0 15px;
+
+                                                .unassigned-box {
+                                                    align-items: flex-start;
+                                                    padding: 19px 20px;
+
+                                                    .left {
+                                                        img {
+                                                            max-width: 19px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .email-section {
+                                margin: 24px 0 20px;
+
+                                .email-sec-inner {
+                                    flex-wrap: wrap;
+
+                                    .form-group {
+                                        margin: 0 0 20px;
+
+                                        &.select-div {
+                                            width: 100%;
+                                            margin-right: 0;
+
+                                            &:before {
+                                                top: 20px;
+                                            }
+
+                                            select {
+                                                padding: 10px 12px;
+                                            }
+                                        }
+                                    }
+
+                                    #selectfighterlist {
+                                        min-width: 100%;
+                                        margin-right: 0;
+                                    }
+
+                                    .btn-red {
+                                        min-width: 120px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .flow-chart-page {
+                .flow-chart-sec {
+                    padding: 25px 15px;
+
+                    .inner-content {
+                        padding: 25px 15px;
+
+                        &.flow-chart-content {
+                            padding: 0;
+                            border: none;
+                            background: none;
+                            border-radius: 0;
+                            box-shadow: none;
+                        }
+
+                        .flow-chart-inner-content {
+                            background: $white;
+                            border-radius: 4px;
+                            border: 1px solid $border-color;
+                            box-shadow: 0px 3px 6px #e3e5ea33;
+                            padding: 25px 15px;
+                        }
+
+                        &:first-child {
+                            & > .top {
+                                border: none;
+                                padding: 0;
+
+                                p {
+                                    display: none;
+                                }
+
+                                .form-group {
+                                    width: 100%;
+
+                                    &.select-div {
+                                        select {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.unassigned-Fighters {
+                            margin-top: 20px;
+
+                            .top {
+                                border-bottom: none;
+                                padding: 25px 15px 15px;
+
+                                button {
+                                    display: none;
+                                }
+
+                                .left {
+                                    width: 100%;
+                                    position: relative;
+
+                                    a.plus-icon {
+                                        position: absolute;
+                                        top: -9px;
+                                        right: 0;
+                                        margin-right: 0;
+                                    }
+
+                                    .form-group {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .middle-sec {
+                                .unassigned-block {
+                                    padding: 0 15px;
+
+                                    .unassigned-box-sec {
+                                        margin: 0 0 15px;
+
+                                        .unassigned-box {
+                                            align-items: flex-start;
+                                            padding: 19px 20px;
+
+                                            .left {
+                                                img {
+                                                    max-width: 19px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .flow-save-btn {
+                            margin-top: 20px;
+                            width: auto;
+                            position: inherit;
+                        }
+                    }
+                }
+            }
+
+            .event-sec {
+                .payment-page {
+                    &.info-page {
+                        padding: 25px 15px;
+
+                        .top {
+                            h1 {
+                                line-height: 54px;
+                                margin-bottom: 15px;
+                            }
+                        }
+
+                        .payment-event {
+                            padding: 25px 15px 30px;
+
+                            .middle-section {
+                                .info-box {
+                                    label {
+                                        min-width: 190px;
+                                    }
+                                }
+
+                                .btn-fed {
+                                    a {
+                                        width: 50%;
+
+                                        &:last-child {
+                                            margin: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.create-page {
+                        .payment-event {
+                            padding: 25px 0;
+                        }
+                    }
+
+                    .payment-event {
+                        .form-area {
+                            .form-group {
+                                &.plan-amount {
+                                    .btn-width-auto {
+                                        margin-top: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .payment-status {
+                .payment-page {
+                    padding: 20px 15px;
+                }
+            }
+        }
+    }
+
+    .loading {
+        transform: translate(-50%);
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-dropdown {
+        width: calc(100% - 30px);
+        margin-top: 0;
+    }
+
+    .confirm-email {
+        padding: 22px 15px;
+
+        .logo {
+            img {
+                opacity: 0.5;
+            }
+
+            a.login-btn {
+                padding: 0 28px;
+                height: 38px;
+                line-height: 38px;
+            }
+        }
+
+        .content {
+            margin-top: 40px;
+
+            h1 {
+                max-width: 254px;
+                margin: 0 auto;
+            }
+
+            p {
+                margin: 10px auto 30px;
+                max-width: 283px;
+                line-height: 19px;
+
+                span {
+                    display: inline;
+
+                    &:last-child {
+                        margin: 20px 0 0;
+                        display: block;
+                    }
+                }
+            }
+
+            a,
+            input[type="submit"] {
+                display: block;
+                padding: 17.5px 45px;
+                width: 100%;
+            }
+        }
+
+        &.forgot-page {
+            .content {
+                input[type="text"],
+                input[type="password"] {
+                    max-width: initial;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .main-section {
+        .right-section {
+            .event-page {
+                .top-bg {
+                    .top-bottom {
+                        span.btn-width-auto {
+                            max-width: 100%;
+                        }
+                    }
+                }
+
+                .finished-fight {
+                    .inner-block {
+                        .middle-block {
+                            .mobile {
+                                li {
+                                    .block {
+                                        .last {
+                                            .rounds {
+                                                & > div {
+                                                    &:nth-child(2) {
+                                                        padding: 5px 10px 7px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .event-sec {
+                .payment-page {
+                    .payment-event {
+                        margin: 77px auto 30px;
+                        padding: 25px 12px;
+
+                        & > p {
+                            margin-bottom: 12px;
+                            max-width: 290px;
+                        }
+                    }
+
+                    .btn-center {
+                        .btn {
+                            width: 100%;
+                        }
+                    }
+                    // &.add_international {
+                    //   .payment-event {
+                    //     .btn-center {
+                    //       flex-wrap: wrap;
+                    //       .btn-red {
+                    //         width: 100%;
+                    //       }
+                    //     }
+                    //   }
+                    // }
+                }
+
+                .top-sec {
+                    .top-right-sec {
+                        & > ul {
+                            li.notification-dropdown {
+                                .dropdown-menu {
+                                    width: 300px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .profile-page {
+                padding-bottom: 37px;
+
+                .profile-summary {
+                    .block {
+                        &.finished-fight {
+                            ul {
+                                li {
+                                    display: block;
+                                    text-align: center;
+
+                                    .left {
+                                        display: block;
+
+                                        .desc {
+                                            margin: 0;
+
+                                            h3 {
+                                                margin: 10px 0;
+                                            }
+
+                                            p {
+                                                text-align: center;
+                                                margin-bottom: 10px;
+
+                                                span {
+                                                    display: inline-block;
+                                                    width: auto;
+                                                    margin-right: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .right {
+                                        display: block;
+                                        text-align: center;
+
+                                        .btn {
+                                            span {
+                                                margin: 0 5px;
+                                            }
+                                        }
+
+                                        .status {
+                                            margin: 10px 0 0;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+
+                                            span {
+                                                width: auto;
+                                                margin-left: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .desktop {
+                                display: none;
+                            }
+
+                            .inner-block {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .profile-gallery {
+                        &.row {
+                            margin-left: -2.25px;
+                            margin-right: -2.25px;
+
+                            .col,
+                            .col-1,
+                            .col-10,
+                            .col-11,
+                            .col-12,
+                            .col-2,
+                            .col-3,
+                            .col-4,
+                            .col-5,
+                            .col-6,
+                            .col-7,
+                            .col-8,
+                            .col-9 {
+                                padding-right: 2.25px;
+                                padding-left: 2.25px;
+                            }
+                        }
+
+                        .fight-img-block {
+                            margin-bottom: 4.5px;
+
+                            img {
+                                height: 112.5px;
+                            }
+                        }
+                    }
+
+                    .col-xl-4.col-lg-12 {
+                        display: flex;
+                        flex-direction: column-reverse;
+                    }
+                }
+            }
+
+            .membership-page {
+                .table-content {
+                    .accept-decline-block {
+                        .box {
+                            & > div {
+                                justify-content: space-between;
+
+                                a {
+                                    width: calc(50% - 12.5px);
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .table-main-sec {
+                        table {
+                            tbody {
+                                tr {
+                                    td.second-last-td {
+                                        a {
+                                            margin: 0 13px;
+                                        }
+                                    }
+
+                                    td {
+                                        // .checkbox-text {
+                                        //   text-align: right;
+                                        // }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .roles-button {
+                        .btn-red {
+                            width: 100%;
+                        }
+                    }
+
+                    .roles-add-user {
+                        .btn-red {
+                            width: 100%;
+                        }
+                    }
+
+                    .add-filter {
+                        .filter_inner {
+                            .filter_left {
+                                flex-wrap: wrap;
+
+                                .form-group {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .default-table {
+                .table-content {
+                    .table-main-sec {
+                        table {
+                            tr {
+                                td {
+                                    .crate-plan {
+                                        .form-group {
+                                            margin-right: 0;
+                                            margin-top: 10px;
+                                            max-width: 100%;
+                                            width: 100%;
+                                            margin-bottom: 0;
+
+                                            &.create-amount {
+                                                input {
+                                                    max-width: 100%;
+                                                }
+                                            }
+
+                                            &.select-div {
+                                                width: 100%;
+                                            }
+                                        }
+
+                                        a.btn-red {
+                                            margin-bottom: 0;
+                                            margin-top: 10px;
+                                            width: 100%;
+                                            max-width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .invoice-page {
+                .table-content {
+                    &.top {
+                        margin-bottom: 10px;
+                    }
+
+                    .table-main-sec {
+                        padding: 6px 15px 15px;
+
+                        .InvoiceAmount {
+                            padding: 25px;
+                            margin: 34px auto;
+                        }
+                    }
+                }
+            }
+
+            .add-account-page {
+                .add-account-sec {
+                    .top {
+                        flex-wrap: wrap;
+
+                        .btn-red {
+                            width: 100%;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            .fight-mixing-page {
+                .fight-mixing-sec {
+                    .tournament-info-box {
+                        padding: 15px;
+
+                        & > div {
+                            &:first-child {
+                                display: block;
+
+                                img {
+                                    width: 100%;
+                                    max-height: 200px;
+                                    object-fit: cover;
+                                    margin-right: 0;
+                                    margin-bottom: 20px;
+                                }
+
+                                .tournament-desc {
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .assign-fight-sec {
+                        .middle-sec {
+                            .inner-block {
+                                &.unassigned-Fighters {
+                                    .middle-sec {
+                                        .unassigned-block {
+                                            .unassigned-box-sec {
+                                                .unassigned-box {
+                                                    .left {
+                                                        text-align: center;
+
+                                                        .delete-icon {
+                                                            display: block;
+                                                            padding: 5px;
+                                                            margin: 0;
+                                                        }
+                                                    }
+
+                                                    .right {
+                                                        display: block;
+
+                                                        .delete-icon {
+                                                            display: none;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .flow-save-btn {
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+
+                                button {
+                                    width: 100%;
+                                    margin-bottom: 15px;
+
+                                    &:first-child {
+                                        margin-right: 0;
+                                        width: 100%;
+                                    }
+                                }
+
+                                a.btn-red {
+                                    margin: 0;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .flow-chart-page {
+                .flow-chart-sec {
+                    .tournament-info-box {
+                        padding: 15px;
+
+                        .btn-width-auto {
+                            a.btn-red {
+                                max-width: 100%;
+                            }
+                        }
+
+                        & > div {
+                            &:first-child {
+                                display: block;
+
+                                img {
+                                    width: 100%;
+                                    max-height: 200px;
+                                    object-fit: cover;
+                                    margin-right: 0;
+                                    margin-bottom: 20px;
+                                }
+
+                                .tournament-desc {
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .inner-content {
+                        & > .top {
+                            .left {
+                                flex-wrap: wrap;
+
+                                .form-group.select-div {
+                                    width: 100%;
+
+                                    &:nth-child(2) {
+                                        margin: 10px 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.unassigned-Fighters {
+                            .middle-sec {
+                                .unassigned-block {
+                                    .unassigned-box {
+                                        .left {
+                                            text-align: center;
+
+                                            .delete-icon {
+                                                display: block;
+                                                padding: 5px;
+                                                margin: 0;
+                                            }
+                                        }
+
+                                        .right {
+                                            display: block;
+
+                                            .delete-icon {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .flow-save-btn {
+                            justify-content: space-between;
+                            flex-wrap: wrap;
+
+                            button {
+                                width: 100%;
+                                margin-bottom: 15px;
+
+                                &:first-child {
+                                    margin-right: 0;
+                                    width: 100%;
+                                }
+                            }
+
+                            a.btn-red {
+                                margin: 0;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .club-member-page {
+                .btn-fed {
+                    justify-content: space-between;
+                    margin: 20px 0;
+
+                    a {
+                        letter-spacing: 0;
+                        font-weight: $fw-300;
+                        width: 50%;
+                        margin-right: 15px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                .payment-event {
+                    .middle-section {
+                        & > div {
+                            & > h2 {
+                                margin-bottom: 20px;
+                            }
+                        }
+
+                        .btn-fed {
+                            margin: 0 0 20px;
+
+                            a.btn-red {
+                                width: 100% !important;
+                            }
+
+                            &.btn-align {
+                                a {
+                                    width: 50%;
+                                }
+                            }
+                        }
+
+                        .btn-red {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .add-fighter {
+                .table-content {
+                    .table-main-sec {
+                        .bottom {
+                            justify-content: space-between;
+
+                            .btn-red {
+                                width: 147px;
+
+                                &:first-child {
+                                    margin: 0;
+                                    width: 148px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .table-section {
+                &.class-history {
+                    .payment-page {
+                        .payment-event {
+                            .form-area {
+                                flex-wrap: wrap;
+
+                                .btn-center {
+                                    margin-top: 20px;
+                                    min-width: inherit;
+                                    margin-left: 0;
+                                    width: 100%;
+                                    justify-content: space-between;
+
+                                    input, a {
+                                        width: calc(50% - 5px);
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .table-content {
+                        .table-main-sec {
+                            table {
+                                tr {
+                                    td, th {
+                                        text-align: right !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,17 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MyFightBook.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MyFightBook.Contracts;
+using MyFightBook.Extensions;
+using MyFightBook.Infrastructure;
+using MyFightBook.Services;
 
 namespace MyFightBook
 {
@@ -25,16 +22,19 @@ namespace MyFightBook
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDatabaseDeveloperPageExceptionFilter();
+            services.ConfigureSqlContext(Configuration);
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddDefaultIdentity();
+            services.IdentityOptions();
+            // Add AutoMapper
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.ConfigureDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,1540 @@
+@import url("https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap");
+@font-face {
+  font-family: "Teko";
+  src: url("Teko-Light.woff2") format("woff2"), url("Teko-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Teko";
+  src: url("Teko-Bold.woff2") format("woff2"), url("Teko-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Teko";
+  src: url("Teko-Medium.woff2") format("woff2"), url("Teko-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Teko";
+  src: url("Teko-Regular.woff2") format("woff2"), url("Teko-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia";
+  src: url("Sofia-Regular.woff2") format("woff2"), url("Sofia-Regular.woff") format("woff"), url("Sofia-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Teko", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: Teko;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+::-webkit-input-placeholder {
+  /* Edge */
+  color: #c4c8ce !important;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #c4c8ce !important;
+  opacity: 1;
+}
+
+::placeholder {
+  color: #c4c8ce !important;
+  opacity: 1;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+.top-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  padding: 30px 0px;
+  z-index: 999999;
+}
+header .nav-bar a {
+  color: #fff;
+  text-decoration: none;
+}
+header .nav-bar a img {
+  max-width: 131px;
+}
+header span {
+  font-weight: 100;
+  text-decoration: none;
+}
+header a {
+  text-decoration: none;
+}
+header h2 {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.right-side-nav-bar input[type=text] {
+  font-size: 14px;
+  display: block;
+  font-family: arial;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  color: #fff;
+  letter-spacing: 1px;
+  width: 0px;
+  padding-left: 40px;
+  position: absolute;
+  top: -10px;
+  right: 170px;
+  background: none;
+  z-index: 3;
+  height: 55px;
+  transition: ease-in-out 0.5s;
+  cursor: pointer;
+  max-width: 430px;
+}
+
+.right-side-nav-bar input[type=text]:focus {
+  max-width: 430px;
+  z-index: 1;
+  cursor: text;
+  background: #fff;
+  border: unset;
+  padding: 20px;
+  color: #000;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.right-side-nav-bar input#search::placeholder {
+  color: #fff;
+}
+
+.right-side-nav-bar input[type=submit] {
+  height: 18px;
+  width: 18px;
+  display: block;
+  background: url(../img/search-white.png) center center no-repeat;
+  text-indent: -9999px;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+  position: relative;
+}
+
+.right-side-nav-bar input.search-btn[type=submit] {
+  background: url(../img/search-red.png) center center no-repeat;
+}
+
+.right-side-nav-bar {
+  float: right;
+  letter-spacing: 1px;
+}
+.right-side-nav-bar ul {
+  padding: 0px;
+  margin: 0px;
+}
+.right-side-nav-bar ul li {
+  display: inline-block;
+  padding: 0px 15px;
+}
+.right-side-nav-bar ul li a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-decoration: none;
+}
+.right-side-nav-bar ul li a i {
+  font-size: 22px;
+}
+
+a.login-btn {
+  background: transparent;
+  border: 1.5px solid #fff;
+  margin: 0px;
+  padding: 7px 40px;
+  border-radius: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+.slider {
+  background: url(../img/boxing.jpg) center center no-repeat;
+  min-height: 700px;
+  background-size: cover;
+  position: relative;
+  padding: 100px 0px 0px;
+}
+
+.slider::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.slide-contant {
+  text-align: center;
+  padding: 120px 0px;
+  letter-spacing: 1.75px;
+}
+.slide-contant h1 {
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1.06;
+  padding: 30px 50px 45px;
+}
+.slide-contant span {
+  opacity: 0.5;
+  font-family: SofiaPro;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  font-family: arial;
+}
+
+.join-btn {
+  font-size: 14px;
+  color: #fff;
+  background: #cc1717;
+  border: unset;
+  padding: 20px 50px;
+  border-radius: 50px;
+  outline: unset !important;
+  letter-spacing: 1.75px;
+  font-family: arial;
+  text-transform: uppercase;
+  box-shadow: 0 12px 34px 0 rgba(204, 23, 23, 0.3);
+}
+.join-btn:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.project {
+  text-align: center;
+  padding: 0px 150px 30px;
+}
+.project h1 {
+  color: #fff;
+  margin-bottom: 0px;
+}
+.project h4 {
+  opacity: 0.5;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.powerfull-platform img {
+  max-width: 500px;
+  max-height: 610px;
+}
+
+.competition-bg {
+  background-color: #f5f5f5;
+  padding-right: calc(((100vw - 1140px) / 2) + 20px);
+}
+.competition-bg .one-tool {
+  padding: 120px 0px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.competition-bg .one-tool .col-left {
+  display: flex;
+  width: calc(100% - 580px);
+}
+.competition-bg .one-tool .col-left .owl-nav {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  direction: ltr;
+}
+.competition-bg .one-tool .col-left .owl-nav button {
+  width: 19px;
+}
+.competition-bg .one-tool .col-left .owl-nav button.owl-next {
+  background: url(../img/arrow-right.png) no-repeat;
+  background-size: 100% auto;
+}
+.competition-bg .one-tool .col-left .owl-nav button.owl-next.disabled {
+  opacity: 0.5;
+}
+.competition-bg .one-tool .col-left .owl-nav button.owl-prev {
+  background: url(../img/arrow-left.png) no-repeat;
+  background-size: 100% auto;
+  margin-right: 10px;
+}
+.competition-bg .one-tool .col-left .owl-nav button.owl-prev.disabled {
+  opacity: 0.5;
+}
+.competition-bg .one-tool .col-left .owl-nav button span {
+  visibility: hidden;
+}
+.competition-bg .one-tool .col-right {
+  max-width: 455px;
+  margin-left: 124px;
+  width: 100%;
+}
+.competition-bg .one-tool .owl-carousel .owl-stage-outer {
+  padding: 30px 0;
+}
+.competition-bg .one-tool .owl-carousel .owl-stage-outer .owl-stage {
+  display: flex;
+}
+
+.competition-view {
+  border-radius: 5px;
+  box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.04);
+  background-color: #ffffff;
+  padding: 20px 22px;
+  box-sizing: border-box;
+  direction: ltr;
+  min-height: 268px;
+}
+.competition-view img {
+  max-width: 30px;
+  max-height: 30px;
+}
+.competition-view h2 {
+  padding: 20px 0px 0px;
+}
+.competition-view p {
+  font-size: 16px;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: #44464a;
+  font-family: arial;
+  line-height: 22px;
+  max-width: 298px;
+}
+
+.complete {
+  text-align: center;
+}
+.complete h4 {
+  color: #c4c8ce;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: arial;
+  padding: 0px 0px 15px;
+  text-transform: uppercase;
+}
+.complete h1 {
+  text-transform: uppercase;
+  color: #000;
+}
+.complete p {
+  max-width: 454px;
+  line-height: normal;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  font-size: 18px;
+  color: #44464a;
+}
+
+.strong-clubs-bg {
+  background: #000;
+  padding: 120px 0px;
+}
+.strong-clubs-bg .clube-contant {
+  padding: 40px 0px 0;
+}
+.strong-clubs-bg .clube-contant h1 {
+  color: #fff;
+  text-transform: uppercase;
+  max-width: 420px;
+  line-height: 1.06;
+  padding: 15px 0px;
+  margin: 0px;
+}
+.strong-clubs-bg .clube-contant p {
+  font-size: 18px;
+  max-width: 420px;
+  color: #fff;
+  font-style: italic;
+  font-family: arial;
+  margin-bottom: 10px;
+}
+.strong-clubs-bg .bo-profile {
+  padding: 25px 0px 0;
+}
+.strong-clubs-bg .bo-profile img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+.strong-clubs-bg .bo-profile h2 {
+  padding: 18px 0px 0px;
+  color: #fff;
+}
+.strong-clubs-bg .bo-profile h4 {
+  letter-spacing: 1px;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: arial;
+  font-weight: 600;
+}
+
+.strong-clubs-bg .col {
+  max-width: 115px;
+}
+
+.our-fighters-bg {
+  background-color: #f5f5f5;
+  padding: 120px 0px 85px;
+}
+.our-fighters-bg .fighting-view h4 {
+  font-family: arial;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #c4c8ce;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.our-fighters-bg .fighting-view h1 {
+  text-transform: uppercase;
+  padding: 15px 0px 20px;
+}
+.our-fighters-bg .search-now {
+  max-width: 430px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  position: relative;
+}
+.our-fighters-bg .search-now input {
+  width: 100%;
+  height: 55px;
+  border-radius: 25px;
+  border: unset;
+  padding: 25px;
+  color: #c4c8ce;
+  font-family: arial;
+  font-size: 16px;
+  outline: unset;
+  box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.04);
+}
+.our-fighters-bg .search-now .custom-search .search-more {
+  position: absolute;
+  top: 23px;
+  font-size: 25px;
+  right: 23px;
+  background: #fff;
+  outline: unset;
+  color: #cc1717;
+  border: unset;
+}
+.our-fighters-bg .search-now .custom-search .search-more i {
+  position: absolute;
+  top: -9px;
+  font-size: 25px;
+  right: 0;
+  color: #cc1717;
+}
+.our-fighters-bg .bg-coustom-team {
+  border-radius: 5px;
+  box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.04);
+  max-width: 265px;
+  background: #fff;
+  margin-bottom: 35px;
+}
+.our-fighters-bg .bg-coustom-team .fighters-team {
+  padding: 25px 20px 0px;
+}
+.our-fighters-bg .view-fighters {
+  text-align: center;
+}
+.our-fighters-bg .view-fighters img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+.our-fighters-bg .view-fighters h2 {
+  padding: 20px 0px 5px;
+  text-transform: uppercase;
+  color: #000;
+}
+.our-fighters-bg .view-fighters h4 {
+  color: #44464a;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: arial;
+  padding-bottom: 20px;
+  margin: 0px;
+  border-bottom: solid 1px #dcdcdc;
+}
+.our-fighters-bg .custom-fighters .col-md-6:first-child {
+  border-right: solid 1px #c4c8ce;
+}
+.our-fighters-bg .custom-fighters {
+  text-align: center;
+  padding: 25px 0px;
+}
+.our-fighters-bg .fighters-contant h5 {
+  color: #c4c8ce;
+  font-size: 16px;
+  font-family: arial;
+}
+.our-fighters-bg .fighters-contant h4 {
+  color: #44464a;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: arial;
+}
+.our-fighters-bg .fighters-team .view-btn {
+  font-size: 14px;
+  color: #fff;
+  background: #cc1717;
+  font-weight: 600;
+  border: unset;
+  padding: 18px 45px;
+  border-radius: 30px;
+  outline: unset !important;
+  letter-spacing: 1.75px;
+  font-family: arial;
+  text-transform: uppercase;
+}
+.our-fighters-bg .view-bn {
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+  background: #cc1717;
+  border: unset;
+  height: 62px;
+  outline: unset !important;
+  letter-spacing: 1.75px;
+  font-family: arial;
+  text-transform: uppercase;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.04);
+  display: block;
+  text-align: center;
+  line-height: 62px;
+}
+.our-fighters-bg .view-bn:hover {
+  text-decoration: none;
+}
+
+.Pricing-outer {
+  padding: 120px 0px;
+}
+
+.Pricing-tabs {
+  text-align: center;
+}
+
+h1.Pricing-title {
+  text-transform: uppercase;
+  color: #000;
+}
+
+.tabs0custom {
+  padding: 40px 0px;
+}
+.tabs0custom ul {
+  max-width: 339px;
+  background: rgba(211, 190, 137, 0.2);
+  margin: 0 auto;
+  border-radius: 25px;
+  display: flex;
+  padding: 6px;
+  align-items: center;
+  justify-content: space-between;
+}
+.tabs0custom li {
+  display: block;
+  padding: 0;
+}
+.tabs0custom li a {
+  color: #d3be89;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: arial;
+  text-decoration: none;
+  padding: 4px 15px;
+  border-radius: 20px;
+  display: block;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+.tabs0custom li a.active {
+  background: #fff;
+}
+
+.premium {
+  background: #d3be89;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.14);
+  text-align: center;
+  max-width: 460px;
+  margin: 0 auto;
+}
+.premium h4 {
+  color: #ffffff;
+  font-family: arial;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  line-height: normal;
+  border-bottom: solid 1px #ffffff;
+  letter-spacing: 1px;
+  padding-bottom: 30px;
+}
+.premium p {
+  margin: 0 auto;
+  font-size: 18px;
+  color: #ffff;
+  font-family: arial;
+  padding: 30px 0px 40px;
+}
+.premium h1 {
+  color: #fff;
+}
+.premium h1 > span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: arial;
+}
+
+.premium-contant {
+  padding: 33px 0px;
+  max-width: 400px;
+  text-align: left;
+  margin: 0 auto;
+}
+.premium-contant ul {
+  padding: 0px;
+  max-width: 310px;
+  margin: 0 auto;
+}
+.premium-contant ul li {
+  list-style: none;
+  padding: 10px 0px;
+  font-size: 16px;
+  color: #fff;
+  font-family: arial;
+  display: flex;
+  align-items: center;
+}
+.premium-contant ul li img {
+  padding-right: 12px;
+}
+
+.scces-btn {
+  font-size: 14px;
+  color: #cc1717;
+  width: 100%;
+  background: #fff;
+  border: unset;
+  font-weight: 600;
+  height: 62px;
+  outline: unset !important;
+  letter-spacing: 1.75px;
+  font-family: arial;
+  text-transform: uppercase;
+  border-radius: 5px;
+  box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.04);
+}
+
+.create-account {
+  border-radius: 5px;
+  box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.04);
+  text-align: center;
+  padding: 30px;
+  max-width: 460px;
+  margin: 0;
+}
+.create-account h4 {
+  color: #000000;
+  font-family: arial;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  line-height: normal;
+  border-bottom: solid 1px #dcdcdc;
+  letter-spacing: 1px;
+  padding-bottom: 30px;
+}
+.create-account h1 {
+  color: #000;
+  padding: 33px 0px 30px;
+}
+.create-account h1 > span {
+  color: #303030;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: arial;
+}
+
+.account-contant {
+  max-width: 400px;
+  text-align: left;
+  margin: 0 auto;
+}
+.account-contant ul {
+  margin: 0px;
+  padding: 0px;
+}
+.account-contant ul li {
+  list-style: none;
+  padding: 10px 0px;
+  font-size: 16px;
+  color: #c4c8ce;
+  font-family: arial;
+  display: flex;
+  align-items: center;
+}
+.account-contant ul li.active {
+  color: #000;
+}
+.account-contant ul li img {
+  padding-right: 12px;
+}
+
+.account {
+  padding: 20px 0px 0;
+}
+.account .create-account {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #cc1717;
+  letter-spacing: 1.75px;
+  box-shadow: unset;
+  text-decoration: unset;
+  font-family: Arial;
+  padding: 16px 0 30px;
+}
+
+.events-outer {
+  background: #000;
+  padding: 120px 0px 120px;
+  display: inline-block;
+  width: 100%;
+}
+.events-outer .event-item-bg {
+  width: 100%;
+  padding-left: calc(((100vw - 1140px) / 2) + 20px);
+  display: flex;
+}
+.events-outer .event-item-bg .owl-nav {
+  position: absolute;
+  top: -40px;
+  right: 70px;
+}
+.events-outer .event-item-bg .owl-nav button {
+  width: 19px;
+}
+.events-outer .event-item-bg .owl-nav button.owl-next {
+  background: url(../img/arrow-right-white@2x.png) no-repeat;
+  background-size: 100% auto;
+}
+.events-outer .event-item-bg .owl-nav button.owl-next.disabled {
+  opacity: 0.5;
+}
+.events-outer .event-item-bg .owl-nav button.owl-prev {
+  background: url(../img/arrow-left-white@2x.png) no-repeat;
+  background-size: 100% auto;
+  margin-right: 10px;
+}
+.events-outer .event-item-bg .owl-nav button.owl-prev.disabled {
+  opacity: 0.5;
+}
+.events-outer .event-item-bg .owl-nav button span {
+  visibility: hidden;
+}
+.events-outer .event-item-bg .owl-carousel .owl-stage-outer {
+  padding: 10px 0 50px 0;
+}
+.events-outer .event-item {
+  margin: 0px;
+  position: relative;
+  box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.1), 0 30px 36px 0 rgba(204, 23, 23, 0.14);
+}
+.events-outer .event-item img {
+  max-height: 210px;
+  cursor: pointer;
+  min-height: 210px;
+  object-fit: cover;
+}
+.events-outer .event-item img:hover {
+  opacity: 1;
+}
+.events-outer .event-item h5 {
+  position: absolute;
+  right: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-family: arial;
+  text-transform: uppercase;
+  background: #0009;
+  top: 8px;
+  padding: 10px 25px;
+  border-radius: 25px;
+}
+
+.tournaments h1 {
+  color: #fff;
+  text-transform: uppercase;
+}
+.tournaments p {
+  font-size: 18px;
+  max-width: 420px;
+  color: #fff;
+  font-family: arial;
+  padding: 15px 0px 100px;
+}
+
+.event-contant {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 20px 20px 15px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+}
+.event-contant h2 {
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+  margin: 0;
+}
+.event-contant h4 {
+  opacity: 0.7;
+  font-size: 16px;
+  color: #fff;
+  font-family: arial;
+  margin: 0;
+}
+.event-contant h4 span a i {
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: transparent;
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  border: solid 1px #fff;
+  border-radius: 50%;
+  padding-top: 5px;
+  outline: unset;
+  font-size: 12px;
+}
+
+.input-group-append {
+  margin-left: unset !important;
+}
+
+.specific {
+  max-width: 429px;
+  margin: 40px auto 0;
+  position: relative;
+}
+.specific.mobile {
+  display: none;
+}
+.specific h4 {
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: arial;
+  padding: 0 0px 30px;
+  font-weight: bold;
+}
+.specific .input-group {
+  z-index: 9;
+}
+.specific input {
+  border-radius: 30px !important;
+  padding: 0px 25px;
+  font-size: 16px;
+  height: 55px;
+  text-transform: uppercase;
+  box-shadow: unset !important;
+  color: #000;
+  outline: unset;
+  letter-spacing: 1px;
+}
+.specific #button-addon1 {
+  position: absolute;
+  right: 10px;
+  color: #cc1717 !important;
+  font-size: 30px;
+}
+.specific #button-addon1 i {
+  font-size: 20px;
+}
+
+.specific-searchbg {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 0 0 25px 25px;
+  position: absolute;
+  top: 73px;
+  padding-top: 25px;
+  width: 100%;
+  z-index: 8;
+  box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.04);
+  display: none;
+}
+.specific-searchbg h2 {
+  text-transform: uppercase;
+}
+.specific-searchbg h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  font-family: arial;
+  font-weight: 600;
+  padding: 5px 0px;
+}
+.specific-searchbg span h4 {
+  font-size: 16px;
+  opacity: 0.5;
+  padding: 0px;
+}
+.specific-searchbg .new-club {
+  padding: 10px 0px;
+}
+.specific-searchbg hr {
+  margin-top: 0rem;
+}
+
+.fight-club {
+  background: #cc17171f;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin: 10px 0px 5px;
+  box-sizing: border-box;
+}
+.fight-club h4 {
+  padding: 0px;
+  color: #cd7979;
+  margin-bottom: 0px;
+}
+.fight-club h2 {
+  color: #cc1717;
+  opacity: unset !important;
+}
+
+.about-left img {
+  width: 500px;
+  max-height: 610px;
+}
+
+.fight-book-outer {
+  padding: 120px 0px;
+}
+
+.fight-book h1 {
+  max-width: 353px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.fight-book p {
+  max-width: 420px;
+  color: #44464a;
+  font-size: 18px;
+  font-family: arial;
+  line-height: 30px;
+}
+
+.investors-outer {
+  padding: 120px 0px;
+  background: #f5f5f5;
+}
+
+.investors-team {
+  text-align: center;
+}
+.investors-team h4 {
+  color: #c4c8ce;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: arial;
+  letter-spacing: 1px;
+}
+.investors-team h1 {
+  text-transform: uppercase;
+  padding: 30px 0px 60px;
+}
+
+.investors-team-view {
+  text-align: center;
+}
+.investors-team-view img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+.investors-team-view h2 {
+  margin: 20px 0px 5px;
+  color: #000;
+  text-transform: uppercase;
+  height: 36px;
+}
+.investors-team-view h4 {
+  color: #44464a;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: arial;
+}
+
+footer {
+  background: #000;
+  padding: 95px 0px 45px;
+}
+
+.footer-outer a {
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+.footer-outer h2 {
+  font-size: 28px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.footer-outer span {
+  font-weight: 100;
+}
+.footer-outer .row {
+  align-items: center;
+}
+
+.footer-item h4 {
+  color: #44464a;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: arial;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.footer-item h4 img {
+  max-width: 28px;
+  max-height: 30px;
+  margin-right: 10px;
+}
+
+@media (max-width: 1366px) {
+  .top-container {
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 1200px) {
+  .top-container {
+    max-width: 991px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .our-fighters-bg .bg-coustom-team {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .top-container {
+    max-width: 991px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .top-container {
+    max-width: 720px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .right-side-nav-bar ul li {
+    padding: 0px 15px;
+  }
+  .right-side-nav-bar ul li a {
+    font-size: 15px;
+  }
+
+  .powerfull-platform img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    margin-top: 50px;
+  }
+
+  .strong-clubs-bg {
+    padding: 80px 0px;
+  }
+  .strong-clubs-bg .clube-contant {
+    padding: 0;
+  }
+  .strong-clubs-bg .clube-contant h1,
+.strong-clubs-bg .clube-contant p {
+    max-width: 100%;
+  }
+
+  .Pricing-outer {
+    padding: 80px 0px;
+  }
+  .Pricing-outer .create-account,
+.Pricing-outer .premium {
+    max-width: 100%;
+  }
+  .Pricing-outer .premium {
+    margin-bottom: 100px;
+  }
+
+  .tournaments p {
+    max-width: 100%;
+    padding-bottom: 100px;
+  }
+
+  .our-fighters-bg {
+    padding: 80px 0px 50px;
+  }
+
+  .fight-book-outer {
+    padding: 80px 0px;
+  }
+  .fight-book-outer .about-left img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 50px;
+  }
+  .fight-book-outer .fight-book h1,
+.fight-book-outer .fight-book p {
+    max-width: 100%;
+  }
+
+  .investors-outer {
+    padding: 80px 0px 30px;
+  }
+  .investors-outer .investors-team-view {
+    margin-bottom: 50px;
+  }
+  .investors-outer .col-xl-3.col-md-6.col-xs-12:nth-child(3n) .investors-team-view, .investors-outer .col-xl-3.col-md-6.col-xs-12:nth-child(4n) .investors-team-view {
+    margin-bottom: 0;
+  }
+
+  .competition-bg .one-tool {
+    padding: 90px 0px 100px;
+  }
+  .competition-bg .one-tool .col-left .owl-nav {
+    top: -10px;
+  }
+
+  .events-outer {
+    padding: 80px 0px;
+  }
+
+  footer {
+    padding: 60px 0px 45px;
+  }
+}
+@media (max-width: 767.98px) {
+  .container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .container .row {
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+  .container .row .col,
+.container .row .col-1,
+.container .row .col-10,
+.container .row .col-11,
+.container .row .col-12,
+.container .row .col-2,
+.container .row .col-3,
+.container .row .col-4,
+.container .row .col-5,
+.container .row .col-6,
+.container .row .col-7,
+.container .row .col-8,
+.container .row .col-9,
+.container .row .col-auto,
+.container .row .col-lg,
+.container .row .col-lg-1,
+.container .row .col-lg-10,
+.container .row .col-lg-11,
+.container .row .col-lg-12,
+.container .row .col-lg-2,
+.container .row .col-lg-3,
+.container .row .col-lg-4,
+.container .row .col-lg-5,
+.container .row .col-lg-6,
+.container .row .col-lg-7,
+.container .row .col-lg-8,
+.container .row .col-lg-9,
+.container .row .col-lg-auto,
+.container .row .col-md,
+.container .row .col-md-1,
+.container .row .col-md-10,
+.container .row .col-md-11,
+.container .row .col-md-12,
+.container .row .col-md-2,
+.container .row .col-md-3,
+.container .row .col-md-4,
+.container .row .col-md-5,
+.container .row .col-md-6,
+.container .row .col-md-7,
+.container .row .col-md-8,
+.container .row .col-md-9,
+.container .row .col-md-auto,
+.container .row .col-sm,
+.container .row .col-sm-1,
+.container .row .col-sm-10,
+.container .row .col-sm-11,
+.container .row .col-sm-12,
+.container .row .col-sm-2,
+.container .row .col-sm-3,
+.container .row .col-sm-4,
+.container .row .col-sm-5,
+.container .row .col-sm-6,
+.container .row .col-sm-7,
+.container .row .col-sm-8,
+.container .row .col-sm-9,
+.container .row .col-sm-auto,
+.container .row .col-xl,
+.container .row .col-xl-1,
+.container .row .col-xl-10,
+.container .row .col-xl-11,
+.container .row .col-xl-12,
+.container .row .col-xl-2,
+.container .row .col-xl-3,
+.container .row .col-xl-4,
+.container .row .col-xl-5,
+.container .row .col-xl-6,
+.container .row .col-xl-7,
+.container .row .col-xl-8,
+.container .row .col-xl-9,
+.container .row .col-xl-auto {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .strong-clubs-bg .col {
+    max-width: 140px;
+  }
+
+  .menu-sec {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100vh;
+  }
+  .menu-sec .search-sec {
+    padding: 0 25px;
+    width: 100%;
+  }
+  .menu-sec .search-sec .specific .input-group {
+    align-items: center;
+  }
+  .menu-sec .search-sec .specific #button-addon1 {
+    right: 5px;
+    top: -3px;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  header {
+    position: static;
+    padding: 0;
+  }
+
+  h1 {
+    line-height: 1.06;
+  }
+
+  .premium {
+    max-width: 325px;
+    margin: 0 auto;
+  }
+
+  .create-account {
+    max-width: 325px;
+    margin: 19px auto;
+    box-shadow: 0 17px 30px 0 rgba(0, 0, 0, 0.04);
+    background-color: #ffffff;
+  }
+
+  .about-left img {
+    width: 100%;
+  }
+
+  .investors-team h1 {
+    margin: 0 auto;
+  }
+
+  .fight-book h1 {
+    max-width: 235px;
+  }
+  .fight-book p {
+    max-width: 375px;
+  }
+
+  .footer-item.footerlogo {
+    text-align: center;
+    padding: 10px 0px;
+  }
+
+  .tabs0custom li a {
+    padding: 4px 10px;
+  }
+
+  .one-tool {
+    padding: 80px 0px 80px;
+  }
+
+  .complete p {
+    padding-bottom: 37px;
+  }
+
+  .our-fighters-bg .search-now input {
+    font-size: 14px;
+  }
+  .our-fighters-bg .search-now .search-more i {
+    top: -7px !important;
+    font-size: 20px !important;
+  }
+
+  .slider {
+    padding: 120px 0 0;
+  }
+  .slider .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .slider .container .row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .slider .container .row .col-md-12 {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .slider .slide-contant {
+    padding: 0px;
+  }
+  .slider .slide-contant h1 {
+    max-width: 380px;
+    padding: 30px 0px 0px;
+    margin: 0 auto;
+    font-size: 42px;
+    letter-spacing: normal;
+  }
+  .slider .slide-contant .join-btn {
+    margin: 40px 0px 0;
+  }
+
+  .project {
+    padding: 100px 0 0;
+  }
+
+  .our-fighters-bg {
+    padding: 80px 0px 60px;
+  }
+
+  .Pricing-outer {
+    padding: 80px 0px 60px;
+    background: #fff;
+  }
+  .Pricing-outer .tabs0custom {
+    padding: 30px 0px 40px;
+  }
+
+  .create-account h1 {
+    padding: 33px 0px 15px;
+  }
+
+  .events-outer {
+    padding: 80px 0px 30px;
+  }
+
+  .specific-searchbg {
+    display: none;
+  }
+
+  .specific h4 {
+    display: none;
+  }
+
+  .fight-book-outer {
+    padding: 80px 0px 50px;
+  }
+
+  .tournaments p {
+    padding: 15px 0px 30px;
+  }
+
+  .complete {
+    padding: 30px 0px;
+  }
+
+  .investors-outer {
+    padding: 80px 0px 30px;
+  }
+  .investors-outer .col-xl-3.col-md-6.col-xs-12:nth-child(3n) .investors-team-view, .investors-outer .col-xl-3.col-md-6.col-xs-12:nth-child(4n) .investors-team-view {
+    margin-bottom: 50px;
+  }
+
+  footer {
+    padding: 50px 0px 50px;
+  }
+  footer .footer-item.footerlogo {
+    padding: 0;
+  }
+  footer .footer-item.footerlogo h2 {
+    margin: 0;
+  }
+  footer .footer-item.footerlogo h4 {
+    margin: 30px 0 0;
+  }
+
+  .competition-bg .one-tool {
+    padding: 50px 0px 50px;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+  }
+  .competition-bg .one-tool .col-right {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .competition-bg .one-tool .col-left {
+    width: 100%;
+    padding-right: 25px;
+  }
+
+  .strong-clubs-bg {
+    padding: 80px 0px 80px;
+  }
+  .strong-clubs-bg .container > .row {
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+  }
+  .strong-clubs-bg .bo-profile {
+    padding: 50px 0px 0;
+  }
+  .strong-clubs-bg .powerfull-platform img {
+    margin-top: 0;
+    margin-bottom: 60px;
+    max-height: 400px;
+  }
+
+  .complete h1 {
+    line-height: 1.06;
+    margin-bottom: 20px;
+  }
+  .complete h4 {
+    padding: 0px 0px 30px;
+  }
+
+  .our-fighters-bg .fighting-view h1 {
+    padding: 30px 0px 30px;
+  }
+  .our-fighters-bg .bg-coustom-team {
+    margin-bottom: 20px;
+  }
+
+  .Pricing-outer .premium {
+    margin-bottom: 0px;
+  }
+
+  .specific.desktop {
+    display: none;
+  }
+  .specific.mobile {
+    display: block;
+    margin: 0 auto 50px;
+  }
+
+  .owl-nav {
+    display: none;
+  }
+
+  a.login-btn {
+    padding: 10px 40px 6px;
+    font-size: 24px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    line-height: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 360px) {
+  .footer-item h4 {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=custom.css.map */

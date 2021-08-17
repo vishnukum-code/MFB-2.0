@@ -1,0 +1,197 @@
+﻿
+@model MyFightBook.Modals.User
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_RegisterMaster.cshtml";
+    var genderList = new List<SelectListItem>
+{
+new SelectListItem
+{
+    Text = "Male",
+    Value = "male"
+},
+new SelectListItem
+{
+    Text = "Female",
+    Value = "female"
+}
+};
+
+    var countryList = Model.CountryList?.Select(x => new SelectListItem() { Text = x.text, Value = x.value });
+    //var clubsList = Model.Clubslist.Select(x => new SelectListItem() { Text = x.Name, Value = x.ClubId.ToString() });
+
+}
+<style>
+    #validationMsg.slideInLeft {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+
+    #validationMsg.slideOut {
+        transform: translate3d(-500%,0,0);
+        opacity: 1;
+    }
+
+    #validationMsg {
+        transform: translate3d(100%, 0, 0);
+        transition: all 1.5s;
+        opacity: 0;
+        color: red;
+    }
+</style>
+
+<div class="register-page">
+    <div class="left">
+        <div class="left-inner">
+            <div class="logo">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/images/logo-black@2x.png" />
+                </a>
+                <a class="login-btn" href="@Url.Action("Login")">login</a>
+            </div>
+            <h1>Register</h1>
+            <p>
+                Get started using MyFightBook today. The first digital online license and is designed to support transparency and a worldwide
+                cooperation across combat sports and associations.
+            </p>
+            <form asp-action="Register" asp-controller="Account" method="post">
+                <div id="validationMsg">
+                    @Html.ValidationMessage("error", new { @class = "server-error regiester_msg" })
+                </div>
+                <div class="form-sec">
+                    <div class="form-group">
+                        @Html.TextBoxFor(x => x.UserName, null, new { @class = "form-control whitelist", autofocus = "autofocus", placeholder = "Username", id = "username", required = "required" })
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group password_rule password-eye">
+                                <div class="password_details">
+                                    <a href="javascript:void(0);" class="close-password-rule-btn"><i class="fa fa-close"></i></a>
+                                    <ul>
+                                        Password rules:
+                                        <li>1) Password length must be minimum 9 characters </li>
+                                        <li>2) Must include Uppercase characters</li>
+                                        <li>3) Must include Lowercase characters</li>
+                                        <li>4) Must include Numbers</li>
+                                        <li>5) Do not allow Ambiguous characters ( { } [ ] ( ) / \ ' " ` ~ , ; : . < > )</li>
+                                        <li>6) Password cannot contain combinations like qwerty, abc, pass, 1234, or 4321</li>
+                                        <li>7) Password (or part of it) cannot contain user's birth date, zip code, username, or email address</li>
+                                    </ul>
+                                </div>
+                                @Html.PasswordFor(x => x.Password, new { @class = "form-control whitelist", placeholder = "Password", id = "password", required = "required" })
+                                <a href="javascript:void(0);" class="passwordtoggle">
+                                    <img src="/backend-assets/img/eye-off.svg" class="passwordoff" alt="" />
+                                    <img src="~/backend-assets/img/eye-on.svg" style="display: none;" class="passwordon" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group password-eye">
+                                @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control whitelist", placeholder = "Repeat password", id = "confirmpassword", required = "required" })
+                                <a href="javascript:void(0);" class="passwordtoggleconfirm">
+                                    <img src="/backend-assets/img/eye-off.svg" class="passwordoff" alt="" />
+                                    <img src="~/backend-assets/img/eye-on.svg" style="display: none;" class="passwordon" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Firstname, new { @class = "form-control whitelist", placeholder = "First name", id = "firstname", required = "required" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Lastname, new { @class = "form-control whitelist", placeholder = "Last name", id = "lastname", required = "required" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group datepicker">
+                                @Html.TextBoxFor(x => x.Birthday, "{0:dd/mm/yyyy}", new { @class = "form-control datepicker1", placeholder = "Birth date", autocomplete = "Off", required = "required" })
+                                <span>
+                                    <img src="/backend-assets/img/calendar@3x.png" alt="" />
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group select-div">
+                                @Html.DropDownListFor(x => x.Gender, genderList, "Sex", new { @class = "form-control color-change", required = "required" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control whitelist", autofocus = "autofocus", placeholder = "Email", type = "email", id = "email", required = "required" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", placeholder = "Phone", required = "required" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Address, new { @class = "form-control", placeholder = "Address 1" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Address1, new { @class = "form-control", placeholder = "Address 2" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.PostCode, new { @class = "form-control accept-only-num", placeholder = "ZIP" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "City" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.State, new { @class = "form-control", placeholder = "State" })
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group select-div">
+                                @Html.DropDownListFor(x => x.Country, countryList, "Select country", new { @class = "form-control color-change" })
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group custom-sec">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="chkedcookiesandpolicyID" name="chkedcookiesandpolicyID">
+                            <label class="custom-control-label" for="chkedcookiesandpolicyID">Please Accept <a target="_blank" class="cookiesurlclass" href="@Url.Action("Cookies", "Auth", new {Term = "Cookies", AdminType ="admin" })">Cookie</a> and <a target="_blank" class="policiesurlclass" href="@Url.Action("Policies", "Auth", new {Term = "Policies", AdminType ="admin" })">Privacy Policy</a></label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="registrationId">register</button>
+
+                </div>
+            </form>
+            <p>By clicking “Register” I agree to MyFightBook’s <a class="cookiesurlclass" target="_blank" href="@Url.Action("Cookies", "Auth", new {Term = "Cookies", AdminType ="admin" })">COOKIE</a> and <a target="_blank" class="policiesurlclass" href="@Url.Action("Policies", "Auth", new {Term = "Policies", AdminType ="admin" })">PRIVACY POLICY</a></p>
+        </div>
+    </div>
+    <div class="right">
+        <a href="@Url.Action("Login","Account")">login</a>
+    </div>
+</div>
+
+
+

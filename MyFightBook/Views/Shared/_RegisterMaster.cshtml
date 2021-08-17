@@ -1,0 +1,162 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="ae4304bc-b183-4f88-aff0-657bbd1471b4" data-blockingmode="auto" type="text/javascript"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title>@ViewBag.Title | MyFightbook</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/backend-assets/css/style.css" />
+    <link rel="shortcut icon" href="~/css/style/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/css/style/img/favicon.ico" type="image/x-icon">
+    @*<link href="/css/myfightbook.min.css" rel="stylesheet" />
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/website.min.css" rel="stylesheet" />*@
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,700italic|Bitter|Squada+One" rel="stylesheet" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+    @await RenderSectionAsync("scripts", false)
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-152533538-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-152533538-2');
+    </script>
+</head>
+<body>
+    <div class="">
+        <div class="loader-1 loading-img" style="display: none;">
+            <img src="/images/Spin-1s-200px.gif" class="">
+        </div>
+        @RenderBody()
+    </div>
+    <script src="/js/select2.full.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.15.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/backend-assets/js/jquery.nicescroll.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    @await RenderSectionAsync("pageJs", false)
+    <script>
+        $(document).ready(function () {
+            var pathname = window.location.pathname;
+
+            if (pathname === "/tournaments/list") {
+                localStorage.removeItem("EFedIds");
+            }
+            else if (pathname === "/events/list") {
+                localStorage.removeItem("TFedIds");
+                localStorage.removeItem("TWIds");
+                localStorage.removeItem("TFCIds");
+                localStorage.removeItem("TGender");
+                localStorage.removeItem("isFilter");
+            }
+            else if (pathname === "/dashboard" || pathname === "/clubs/list" || pathname === "/grades/list" || pathname === "/grades/gradelist"
+                || pathname === "/profile" || pathname === "/medical" || pathname === "/settings/list" || pathname === "/federations/list") {
+                localStorage.removeItem("TFedIds");
+                localStorage.removeItem("TWIds");
+                localStorage.removeItem("TFCIds");
+                localStorage.removeItem("TGender");
+                localStorage.removeItem("EFedIds");
+                localStorage.removeItem("isFilter");
+            }
+            var today = new Date();
+            var yesterday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1);
+            $('.datepicker1').datepicker({
+                uiLibrary: 'bootstrap4',
+                todayHighlight: 1,
+                autoclose: true,
+                format: 'dd/mm/yyyy',
+                endDate: "today",
+                maxDate: yesterday
+            });
+            $(".datepicker1").each(function () {
+                var txt = $(this).val();
+                console.log(txt);
+                if (txt === "1/1/0001 12:00:00 AM" || txt === "01/01/0001" || txt === "01/00/0001" || txt === "01-00-0001") {
+                    $(this).val("");
+                }
+            });
+
+            $('.select2').select2()
+                .on("select2:open", function () {
+                    $('.select2-results__options').niceScroll({
+                        cursorcolor: "#44464a",
+                        cursorwidth: "4px",
+                        autohidemode: true,
+                        horizrailenabled: true,
+                        cursorborder: "1px solid #44464a"
+                    });
+                });
+
+            $(".accept-only-num").keypress(function (e) {
+                if (e.which !== 8 && e.which !== 0 && (e.which < 48 || e.which > 57)) {
+                    return false;
+                }
+
+                return true;
+            });
+
+            //Change dropdown color on change
+            $(".select2").each(function () {
+                if ($(this).find("option:selected").index() > 0) {
+                    $(this).parent().find(".select2-selection__rendered").addClass("color-black");
+                }
+                else if ($(this).find("option:selected").index() !== -1) {
+                    $(this).parent().find(".select2-selection__rendered").removeClass("color-black");
+                }
+            });
+
+            $(".select2").on("change", function () {
+                if ($(this).find("option:selected").index() > 0) {
+                    $(this).parent().find(".select2-selection__rendered").addClass("color-black");
+                }
+                else {
+                    $(this).parent().find(".select2-selection__rendered").removeClass("color-black");
+                }
+            });
+
+            $(".color-change").each(function () {
+                if ($(this).find("option:selected").index() > 0) {
+                    $(this).addClass("color-black");
+                }
+                else {
+                    $(this).removeClass("color-black");
+                }
+            });
+
+            $(".color-change").on("change", function () {
+                if ($(this).find("option:selected").index() > 0) {
+                    $(this).addClass("color-black");
+                }
+                else {
+                    $(this).removeClass("color-black");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

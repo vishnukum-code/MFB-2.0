@@ -1,25 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyFightBook.Modals;
 using MyFightBook.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyFightBook.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
+            ViewBag.totalclubcount = Variables.Clubcount;
+            ViewBag.totaleventcount = Variables.Eventcount;
+            ViewBag.totalfighters = Variables.Fightercount;
+            ViewBag.Servertime = DateTime.Now;
+            ViewBag.eventtournamentlist = Variables.EventTournamentList;
+            //ViewBag.BaseUrl = _constants.BaseUrl;
             return View();
         }
 
