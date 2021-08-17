@@ -36,17 +36,14 @@ namespace MyFightBook.Services
                         {
                             var code = await _userManager.GenerateEmailConfirmationTokenAsync(userRegistrationDto);
                             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                            return (new RegisterResult { Userid = userRegistrationDto.Id, Code = code });
+                            return new RegisterResult { Userid = userRegistrationDto.Id, Code = code };
                         }
-                        else
-                        {
-                            return (new RegisterResult { Userid = string.Empty, Code = string.Empty });
-                        }
+                            return new RegisterResult { Userid = string.Empty, Code = "Something Wrong!" };
                     }
-                    return (new RegisterResult { Userid = string.Empty, Code = string.Empty });
+                    return new RegisterResult { Userid = string.Empty, Code = "User Already Exists " };
 
                 }
-                return (new RegisterResult { Userid = string.Empty, Code = string.Empty });
+                return new RegisterResult { Userid = string.Empty, Code = string.Empty };
             }
             catch (Exception ex)
             {

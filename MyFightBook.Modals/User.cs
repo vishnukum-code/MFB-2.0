@@ -83,4 +83,25 @@ namespace MyFightBook.Modals
 
     }
 
+    public class FogotPSDModel 
+    {
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+    }
+    public class ResetPassword
+    {
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "New Password required")]
+        public string NewPassword { get; set; }
+
+        [Required(ErrorMessage = "Confirm Password required")]
+        [Compare("NewPassword", ErrorMessage = "The password and confirmation password do not match.")]
+        public string NewPasswordConfirm { get; set; }
+        public string Code { get; set; }
+    }
+
 }

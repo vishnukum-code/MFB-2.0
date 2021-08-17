@@ -35,7 +35,7 @@ namespace MyFightBook.Services
                         _logger.LogInformation("User logged in.");
                         return new Result { Status = true, Message = login.RedirectUrl };
                     }
-                    return new Result { Status = false, Message = "User not loggedin" };
+                    return new Result { Status = false, Message = "Email Or Password Are Wrong" };
                     if (result.IsLockedOut)
                     {
                         _logger.LogWarning("User account locked out.");
@@ -84,5 +84,6 @@ namespace MyFightBook.Services
             await _signInManager.SignOutAsync();
             return new Result { Status = true, Message = "User SignOut" };
         }
+        
     }
 }

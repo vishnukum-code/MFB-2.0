@@ -43,6 +43,7 @@ namespace MyFightBook.Extensions
         {
             services.AddScoped<IUserRegistration, UserRegistration>();
             services.AddScoped<IUserLogin, UserLogin>();
+            services.AddScoped<IEmailService, EmailService>();
         }
     }
 }

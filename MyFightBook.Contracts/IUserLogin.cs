@@ -8,5 +8,6 @@ namespace MyFightBook.Contracts
         Task<Result> IsUserLoged(Login login);
         Task<Result> EmailVerficationF(string id,string code);
         Task<Result> SignOutF();
+       // Task<Result> ForgotPassword(FogotPSDModel fogotPSDModel);
     }
 }

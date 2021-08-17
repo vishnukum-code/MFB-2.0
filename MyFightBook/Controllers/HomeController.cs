@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using MyFightBook.Modals;
 using MyFightBook.Models;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace MyFightBook.Controllers
